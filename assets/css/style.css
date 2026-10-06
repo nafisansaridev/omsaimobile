@@ -175,3 +175,64 @@ body {
 #toastNotification {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* ==========================================================================
+   Smooth Running Announcement Ticker / Marquee (Right-to-Left)
+   ========================================================================== */
+@keyframes tickerRunLeft {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.top-ticker-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: #020617;
+}
+
+.top-ticker-wrapper::before,
+.top-ticker-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.top-ticker-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #020617 15%, transparent);
+}
+
+.top-ticker-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #020617 15%, transparent);
+}
+
+.top-ticker-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: tickerRunLeft 30s linear infinite;
+}
+
+.top-ticker-track:hover,
+.top-ticker-track:active,
+.top-ticker-track:focus-within {
+  animation-play-state: paused;
+}
+
+@media (max-width: 640px) {
+  .top-ticker-track {
+    animation-duration: 25s;
+  }
+}
+

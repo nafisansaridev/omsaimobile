@@ -63,16 +63,31 @@ function initLiveStoreStatus() {
   }
 
   statusElements.forEach(el => {
+    const isDarkBar = el.closest('.bg-slate-950') !== null;
     if (isOpen) {
-      el.innerHTML = `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-300">
-        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-        Open Now • Closes ${closeTimeString}
-      </span>`;
+      if (isDarkBar) {
+        el.innerHTML = `<span class="inline-flex items-center gap-1.5 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          Open Now • Closes ${closeTimeString}
+        </span>`;
+      } else {
+        el.innerHTML = `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          Open Now • Closes ${closeTimeString}
+        </span>`;
+      }
     } else {
-      el.innerHTML = `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-300">
-        <span class="w-2 h-2 rounded-full bg-rose-500"></span>
-        Closed Now • Opens ${openTimeString}
-      </span>`;
+      if (isDarkBar) {
+        el.innerHTML = `<span class="inline-flex items-center gap-1.5 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold bg-slate-800 text-slate-300 border border-slate-700">
+          <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
+          Closed Now • Opens ${openTimeString}
+        </span>`;
+      } else {
+        el.innerHTML = `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-300">
+          <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+          Closed Now • Opens ${openTimeString}
+        </span>`;
+      }
     }
   });
 }
