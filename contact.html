@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store Location, Directions & Reviews | OM SAI MOBILE</title>
+  <meta name="description" content="Visit OM SAI MOBILE in Main Market, Opposite City Bank ATM. Live operating hours, Google Maps directions, hotline numbers, and customer review submission.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Store Location & Reviews | OM SAI MOBILE">
+  <meta property="og:description" content="Shop No. 4, Ground Floor, Royal Plaza, Main Market. Open 7 days a week.">
+  <meta property="og:image" content="assets/images/storefront.jpg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              slate: '#0F172A',
+              slateLight: '#1E293B',
+              green: '#10B981',
+              greenDark: '#059669',
+              whatsapp: '#25D366',
+              bgLight: '#F8FAFC'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Schema.org JSON-LD LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobilePhoneStore",
+    "name": "OM SAI MOBILE",
+    "image": "https://www.omsaimobile.com/assets/images/storefront.jpg",
+    "@id": "https://www.omsaimobile.com/#store",
+    "url": "https://www.omsaimobile.com",
+    "telephone": "+919876543210",
+    "priceRange": "₹₹",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Shop No. 4, Ground Floor, Royal Plaza, Opposite City Bank ATM, Main Market Road",
+      "addressLocality": "Ahmedabad",
+      "addressRegion": "Gujarat",
+      "postalCode": "380001",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 23.0225,
+      "longitude": 72.5714
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "10:00",
+        "closes": "21:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "11:00",
+        "closes": "20:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "342"
+    }
+  }
+  </script>
+</head>
+<body class="bg-white text-slate-900 pb-mobile-nav font-sans">
+
+  <!-- ================= TOP TRUST BAR ================= -->
+  <div class="bg-slate-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 text-emerald-400 font-semibold">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          Direct Store Desk • Customer Parking Available
+        </span>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="live-store-status"></div>
+        <a href="tel:+919876543210" class="hover:text-white transition-colors flex items-center gap-1 font-medium">
+          <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Hotline: +91 98765 43210
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= STICKY HEADER ================= -->
+  <header id="mainHeader" class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-3 group focus:outline-none">
+        <img src="logo/logo.svg" alt="OM SAI MOBILE Logo" class="h-12 w-auto transform group-hover:scale-102 transition-transform">
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="index.html" class="font-medium text-slate-700 hover:text-emerald-600 text-sm tracking-wide transition-colors">Home</a>
+        <a href="shop.html" class="font-medium text-slate-700 hover:text-emerald-600 text-sm tracking-wide transition-colors">Mobiles & Catalog</a>
+        <a href="repair.html" class="font-medium text-slate-700 hover:text-emerald-600 text-sm tracking-wide transition-colors flex items-center gap-1.5">
+          <span>Repair Services</span>
+          <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">30-Min</span>
+        </a>
+        <a href="reels.html" class="font-medium text-slate-700 hover:text-emerald-600 text-sm tracking-wide transition-colors flex items-center gap-1.5">
+          <span>Customer Reels</span>
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+        </a>
+        <a href="contact.html" class="font-bold text-emerald-600 text-sm tracking-wide">Store & Contact</a>
+      </nav>
+
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="tel:+919876543210" class="px-4 py-2 rounded-xl text-sm font-bold text-slate-800 border border-slate-300 hover:bg-slate-50 transition-colors flex items-center gap-2">
+          <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Call Store
+        </a>
+        <a href="https://wa.me/919876543210?text=Hello%20OM%20SAI%20MOBILE!%20I%20am%20heading%20to%20your%20store%20now." target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 shadow-sm hover:shadow transition-all flex items-center gap-2">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.966.565 3.805 1.554 5.371L2 22l4.757-1.527a9.98 9.98 0 005.274 1.488h.005c5.534 0 10.029-4.495 10.029-10.03 0-2.678-1.043-5.197-2.937-7.091A9.972 9.972 0 0012.031 2z"/></svg>
+          WhatsApp Us
+        </a>
+      </div>
+
+      <button id="mobileMenuBtn" aria-label="Open Navigation Menu" class="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop & Drawer -->
+  <div id="mobileMenuBackdrop" class="fixed inset-0 z-50 bg-slate-900/60 hidden opacity-0 transition-opacity duration-300"></div>
+  <div id="mobileMenuDrawer" class="fixed top-0 right-0 z-50 w-72 h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col justify-between p-6">
+    <div>
+      <div class="flex items-center justify-between pb-5 border-b border-slate-100">
+        <img src="logo/logo.svg" alt="OM SAI MOBILE" class="h-10 w-auto">
+        <button id="mobileMenuClose" aria-label="Close Navigation Menu" class="p-2 rounded-lg text-slate-500 hover:bg-slate-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <nav class="mt-6 flex flex-col gap-4">
+        <a href="index.html" class="flex items-center justify-between font-medium text-slate-700 p-2 rounded-lg hover:bg-slate-50">
+          <span>Home</span>
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="shop.html" class="flex items-center justify-between font-medium text-slate-700 p-2 rounded-lg hover:bg-slate-50">
+          <span>Mobiles & Accessories</span>
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="repair.html" class="flex items-center justify-between font-medium text-slate-700 p-2 rounded-lg hover:bg-slate-50">
+          <div class="flex items-center gap-2">
+            <span>Express Repairs</span>
+            <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">30-Min</span>
+          </div>
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="reels.html" class="flex items-center justify-between font-medium text-slate-700 p-2 rounded-lg hover:bg-slate-50">
+          <div class="flex items-center gap-2">
+            <span>Unboxing Reels</span>
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          </div>
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="contact.html" class="flex items-center justify-between font-bold text-emerald-600 p-2 rounded-lg bg-emerald-50">
+          <span>Store & Directions</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </nav>
+    </div>
+
+    <div class="pt-6 border-t border-slate-100 flex flex-col gap-3">
+      <div class="live-store-status text-center"></div>
+      <a href="tel:+919876543210" class="w-full text-center py-2.5 rounded-xl font-bold text-sm bg-slate-900 text-white">Call Shop Now</a>
+      <a href="https://wa.me/919876543210" target="_blank" class="w-full text-center py-2.5 rounded-xl font-bold text-sm bg-emerald-600 text-white">Order on WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- ================= STORE LOCATION & SPLIT SECTION ================= -->
+  <section class="py-12 md:py-16 bg-gradient-to-b from-slate-50 to-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Headline -->
+      <div class="mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-600">Local Presence</span>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mt-1">
+          Store Location & Neighborhood Hub
+        </h1>
+        <p class="text-slate-500 text-sm sm:text-base mt-2 max-w-2xl">
+          Easy access with dedicated vehicle parking, air-conditioned customer waiting lounge, and live test benches.
+        </p>
+      </div>
+
+      <!-- 2-Column Split: Details & Hours vs Interactive Map -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left Column: NAP, Landmark, Live Hours Table & CTAs -->
+        <div class="lg:col-span-6 space-y-6">
+          
+          <!-- Physical Address Card -->
+          <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-slate-900 text-white">
+                Main Market Branch
+              </span>
+              <div class="live-store-status"></div>
+            </div>
+
+            <h2 class="text-xl sm:text-2xl font-black text-slate-900 mb-2">
+              OM SAI MOBILE Showroom
+            </h2>
+
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Shop No. 4, Ground Floor, Royal Plaza,<br>
+              Opposite City Bank ATM, Main Market Road,<br>
+              Ahmedabad - 380001, Gujarat, India.
+            </p>
+
+            <div class="mt-4 p-3.5 rounded-xl bg-slate-50 border border-slate-100 text-xs text-slate-600 flex items-start gap-2.5">
+              <span class="text-emerald-600 text-base">📍</span>
+              <div>
+                <strong class="text-slate-900 block">Landmark Guidance:</strong>
+                Located right opposite City Bank ATM and 50 meters before Metro Pillar 42. Look for the illuminated warm white "OM SAI MOBILE" signboard.
+              </div>
+            </div>
+
+            <!-- Action CTAs -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
+              <a 
+                href="https://maps.google.com/?q=23.0225,72.5714" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="py-3 px-4 rounded-xl font-bold text-xs sm:text-sm bg-slate-900 hover:bg-slate-800 text-white text-center flex items-center justify-center gap-2 shadow transition-colors"
+              >
+                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <span>Get Map Directions</span>
+              </a>
+
+              <a 
+                href="tel:+919876543210" 
+                class="py-3 px-4 rounded-xl font-bold text-xs sm:text-sm bg-emerald-600 hover:bg-emerald-700 text-white text-center flex items-center justify-center gap-2 shadow transition-colors"
+              >
+                <svg class="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <span>Call +91 98765 43210</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Operational Hours Table Card -->
+          <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
+            <h3 class="text-base font-bold text-slate-900 mb-4 flex items-center gap-2">
+              <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Weekly Operational Hours</span>
+            </h3>
+
+            <div class="space-y-2 text-xs sm:text-sm">
+              <div class="flex justify-between py-2 border-b border-slate-100 font-medium">
+                <span class="text-slate-700">Monday – Saturday</span>
+                <span class="text-slate-900 font-bold">10:00 AM – 9:30 PM</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-slate-100 font-medium bg-emerald-50/50 px-2 rounded-lg">
+                <span class="text-emerald-900 font-bold">Sunday</span>
+                <span class="text-emerald-900 font-bold">11:00 AM – 8:00 PM</span>
+              </div>
+            </div>
+
+            <div class="mt-4 flex items-center gap-3 text-xs text-slate-500">
+              <span class="inline-flex items-center gap-1 text-emerald-700 font-semibold">
+                ✓ Free Customer Parking
+              </span>
+              <span>•</span>
+              <span class="inline-flex items-center gap-1 text-emerald-700 font-semibold">
+                ✓ High-Speed Transfer Wi-Fi
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Interactive Google Map Iframe & Storefront Photo -->
+        <div class="lg:col-span-6 space-y-6">
+          
+          <!-- Embedded Google Map -->
+          <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="p-4 bg-slate-900 text-white flex items-center justify-between text-xs font-bold">
+              <span>Interactive Store Geolocation</span>
+              <span class="text-emerald-400">Live Satellite / Street View</span>
+            </div>
+
+            <!-- Map Iframe with Coordinates Pin -->
+            <div class="relative w-full h-[360px] bg-slate-100">
+              <iframe 
+                title="OM SAI MOBILE Geolocation Map" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14686.790938644485!2d72.5614!3d23.0225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDAxJzIxLjAiTiA3MsKwMzQnMTcuMCJF!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                class="w-full h-full"
+              ></iframe>
+
+              <!-- Floating directions pill over map -->
+              <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3 rounded-2xl border border-slate-200 shadow-lg flex items-center justify-between">
+                <div>
+                  <p class="text-xs font-bold text-slate-900">OM SAI MOBILE</p>
+                  <p class="text-[11px] text-slate-500">Royal Plaza, Main Market</p>
+                </div>
+                <a href="https://maps.google.com/?q=23.0225,72.5714" target="_blank" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 text-white hover:bg-emerald-700 transition-colors">
+                  Open in Maps App
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Storefront Visual Proof -->
+          <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm">
+            <img src="assets/images/storefront.jpg" alt="OM SAI MOBILE Storefront" class="w-full h-56 object-cover" loading="lazy">
+            <div class="p-4 bg-slate-50 text-xs text-slate-600 flex items-center justify-between">
+              <span class="font-bold text-slate-900">Storefront View</span>
+              <span>Look for the glowing OM SAI MOBILE sign</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= LEAVE A REVIEW FORM (GOOGLE SHEETS INTEGRATION) ================= -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-slate-50 rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm">
+        
+        <div class="text-center max-w-xl mx-auto mb-8">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold mb-3 border border-amber-200">
+            <span>★</span>
+            <span>Customer Feedback & Rating</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+            Share Your Experience at OM SAI MOBILE
+          </h2>
+          <p class="text-slate-500 text-xs sm:text-sm mt-1">
+            Your review helps neighborhood customers find honest pricing and rapid repairs.
+          </p>
+        </div>
+
+        <form id="contactPageReviewForm" class="space-y-5">
+          
+          <!-- Rating Stars -->
+          <div class="text-center">
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Select Your Rating</label>
+            <div class="star-rating-container inline-flex items-center justify-center gap-2 p-2 bg-white rounded-2xl border border-slate-200 shadow-sm">
+              <input type="hidden" name="rating" class="selected-rating-val" value="5">
+              <button type="button" data-star="1" class="star-btn text-3xl text-amber-400 hover:scale-110 transition-transform">★</button>
+              <button type="button" data-star="2" class="star-btn text-3xl text-amber-400 hover:scale-110 transition-transform">★</button>
+              <button type="button" data-star="3" class="star-btn text-3xl text-amber-400 hover:scale-110 transition-transform">★</button>
+              <button type="button" data-star="4" class="star-btn text-3xl text-amber-400 hover:scale-110 transition-transform">★</button>
+              <button type="button" data-star="5" class="star-btn text-3xl text-amber-400 hover:scale-110 transition-transform">★</button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1.5">Your Full Name *</label>
+              <input type="text" name="name" required placeholder="e.g. Ketan Mehta" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:border-emerald-600 focus:outline-none bg-white">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1.5">WhatsApp / Phone Number</label>
+              <input type="tel" name="phone" placeholder="e.g. 9876543210" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:border-emerald-600 focus:outline-none bg-white">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1.5">Handset Purchased or Service Availed</label>
+            <input type="text" name="service" placeholder="e.g. iPhone 15 Pro Purchase or Samsung AMOLED Display Replacement" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:border-emerald-600 focus:outline-none bg-white">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1.5">Your Honest Review Message *</label>
+            <textarea name="message" rows="4" required placeholder="Describe your experience with the staff, pricing, and turnaround speed..." class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:border-emerald-600 focus:outline-none bg-white"></textarea>
+          </div>
+
+          <p class="text-[11px] text-slate-500">
+            🔒 By submitting, your review is transmitted to our Google Sheets webhook ledger for verification and showcase.
+          </p>
+
+          <button type="submit" class="w-full py-4 px-6 rounded-xl font-bold text-sm bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg shadow-emerald-600/20 transition-all flex items-center justify-center gap-2">
+            <span>Submit Verified Review</span>
+            <svg class="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= GLOBAL MASTER FOOTER ================= -->
+  <footer class="bg-slate-950 text-slate-400 pt-16 pb-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div>
+          <img src="logo/logo.svg" alt="OM SAI MOBILE" class="h-10 w-auto mb-4 filter brightness-125">
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Your neighborhood authorized retail showroom for sealed smartphones, genuine mobile accessories, and certified 30-minute hardware service.
+          </p>
+          <div class="flex items-center gap-2 text-xs font-semibold text-emerald-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span>100% Genuine Box-Pack Guarantee</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Quick Navigation</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="index.html" class="hover:text-emerald-400 transition-colors">Home Showcase</a></li>
+            <li><a href="shop.html" class="hover:text-emerald-400 transition-colors">Smartphones Catalog</a></li>
+            <li><a href="repair.html" class="hover:text-emerald-400 transition-colors">Repair Cost Calculator</a></li>
+            <li><a href="reels.html" class="hover:text-emerald-400 transition-colors">Customer Unboxing Reels</a></li>
+            <li><a href="contact.html" class="hover:text-emerald-400 transition-colors font-bold text-emerald-400">Store Geolocation & Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Express In-Store Services</h4>
+          <ul class="space-y-2 text-xs">
+            <li><span class="text-slate-300">Display Replacement (FHD+/AMOLED)</span></li>
+            <li><span class="text-slate-300">Fast Battery Swap & Calibration</span></li>
+            <li><span class="text-slate-300">Type-C & Lightning Port Repair</span></li>
+            <li><span class="text-slate-300">Water Damage Ultrasonic Treatment</span></li>
+            <li><span class="text-slate-300">Zero-Wait Old Phone Exchange</span></li>
+            <li><span class="text-slate-300">Free Phone Data Migration</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Store NAP & Hotline</h4>
+          <address class="not-italic text-xs space-y-2.5">
+            <p class="text-slate-300">
+              <strong class="text-white">OM SAI MOBILE</strong><br>
+              Shop No. 4, Ground Floor, Royal Plaza,<br>
+              Opposite City Bank ATM, Main Market Road,<br>
+              Ahmedabad - 380001, Gujarat, India.
+            </p>
+            <p>
+              <strong class="text-white">Phone:</strong> <a href="tel:+919876543210" class="hover:text-emerald-400">+91 98765 43210</a>
+            </p>
+            <p>
+              <strong class="text-white">WhatsApp:</strong> <a href="https://wa.me/919876543210" target="_blank" class="text-emerald-400 hover:underline">+91 98765 43210</a>
+            </p>
+          </address>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© 2026 OM SAI MOBILE. All rights reserved. Registered Retail Store.</p>
+        <p>Google Review data synced asynchronously via secure Webhook</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= PERSISTENT BOTTOM ACTION BAR (MOBILE ONLY) ================= -->
+  <div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-lg border-t border-slate-200 px-3 py-2 shadow-2xl flex items-center gap-2">
+    <a href="tel:+919876543210" class="flex-1 py-2.5 px-3 rounded-xl font-bold text-xs bg-slate-900 text-white flex items-center justify-center gap-1.5 shadow">
+      <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+      <span>Call Shop</span>
+    </a>
+    <a href="https://wa.me/919876543210?text=Hi%20OM%20SAI%20MOBILE!%20I%20am%20coming%20to%20your%20store%20today." target="_blank" class="flex-1 py-2.5 px-3 rounded-xl font-bold text-xs bg-emerald-600 text-white flex items-center justify-center gap-1.5 shadow">
+      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.966.565 3.805 1.554 5.371L2 22l4.757-1.527a9.98 9.98 0 005.274 1.488h.005c5.534 0 10.029-4.495 10.029-10.03 0-2.678-1.043-5.197-2.937-7.091A9.972 9.972 0 0012.031 2z"/></svg>
+      <span>WhatsApp Order</span>
+    </a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/reviews-form.js"></script>
+</body>
+</html>

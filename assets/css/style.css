@@ -1,0 +1,177 @@
+/* ==========================================================================
+   OM SAI MOBILE - Brand Design System & Micro-Interactions
+   Colors: Deep Slate (#0F172A), Pure White (#FFFFFF), WhatsApp/Emerald (#10B981)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --color-slate-900: #0F172A;
+  --color-slate-800: #1E293B;
+  --color-slate-700: #334155;
+  --color-slate-600: #475569;
+  --color-slate-500: #64748B;
+  --color-slate-100: #F1F5F9;
+  --color-slate-50: #F8FAFC;
+  --color-emerald: #10B981;
+  --color-emerald-dark: #059669;
+  --color-whatsapp: #25D366;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #0F172A;
+  background-color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Floating animation for Owner Cutout */
+@keyframes floatOwner {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(0.4deg);
+  }
+}
+
+.animate-float-owner {
+  animation: floatOwner 5s ease-in-out infinite;
+}
+
+/* Pulsating Play Button for Reel Cards */
+@keyframes pulsePlay {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 16px rgba(255, 255, 255, 0);
+    transform: translate(-50%, -50%) scale(1.06);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.animate-play-pulse {
+  animation: pulsePlay 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* Subtle Shimmer for Trust Badges */
+@keyframes softShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.badge-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: softShimmer 4s infinite;
+}
+
+/* Smooth Horizontal Snap Scroll for Reels */
+.reels-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #CBD5E1 transparent;
+}
+
+.reels-scroll-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.reels-scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.reels-scroll-container::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+.reels-scroll-container > * {
+  scroll-snap-align: start;
+}
+
+/* 9:16 Aspect Ratio Helper */
+.aspect-9-16 {
+  aspect-ratio: 9 / 16;
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-badge-dark {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-badge-light {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
+}
+
+/* Custom Modal Animation */
+.modal-active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.modal-content-enter {
+  transform: scale(0.95);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease-out;
+}
+
+.modal-active .modal-content-enter {
+  transform: scale(1);
+}
+
+/* Mobile Safe Bottom Padding to prevent Action Bar overlap */
+.pb-mobile-nav {
+  padding-bottom: 5.5rem;
+}
+
+@media (min-width: 768px) {
+  .pb-mobile-nav {
+    padding-bottom: 0;
+  }
+}
+
+/* Interactive brand buttons */
+.brand-selector-btn.active {
+  border-color: #10B981;
+  background-color: #ECFDF5;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
+}
+
+.issue-selector-btn.active {
+  border-color: #10B981;
+  background-color: #ECFDF5;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
+}
+
+/* Toast Notification */
+#toastNotification {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}

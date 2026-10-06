@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Express 30-Min Mobile Repairs & Instant Price Estimator | OM SAI MOBILE</title>
+  <meta name="description" content="Calculate smartphone repair prices instantly. Apple, Samsung, OnePlus, Xiaomi screen and battery replacement in 30 minutes in front of you with 90-day warranty.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Express 30-Min Mobile Repairs | OM SAI MOBILE">
+  <meta property="og:description" content="Instant repair cost estimate for Apple, Samsung, OnePlus & Xiaomi. Done in 30 mins in front of you with 90-day warranty.">
+  <meta property="og:image" content="assets/images/reel-thumb-3.jpg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              slate: '#0F172A',
+              slateLight: '#1E293B',
+              green: '#10B981',
+              greenDark: '#059669',
+              whatsapp: '#25D366',
+              bgLight: '#F8FAFC'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-white text-slate-900 pb-mobile-nav font-sans">
+
+  <!-- ================= TOP TRUST BAR ================= -->
+  <div class="bg-slate-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 text-emerald-400 font-semibold">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          Express 30-Min In-Store Bench Repairs • 100% Data Privacy
+        </span>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="live-store-status"></div>
+        <a href="tel:+919876543210" class="hover:text-white transition-colors flex items-center gap-1 font-medium">
+          <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Technician Desk: +91 98765 43210
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= STICKY HEADER ================= -->
+  <header id="mainHeader" class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-3 group focus:outline-none">
+        <img src="logo/logo.svg" alt="OM SAI MOBILE Logo" class="h-12 w-auto transform group-hover:scale-102 transition-transform">
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="index.html" class="font-medium text-slate-700 hover:text-emerald-600 text-sm tracking-wide transition-colors">Home</a>
+        <a href="shop.html" class="font-medium text-slate-700 hover:text-emerald-600 text-sm tracking-wide transition-colors">Mobiles & Catalog</a>
+        <a href="repair.html" class="font-bold text-emerald-600 text-sm tracking-wide flex items-center gap-1.5">
+          <span>Repair Services</span>
+          <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">30-Min</span>
+        </a>
+        <a href="reels.html" class="font-medium text-slate-700 hover:text-emerald-600 text-sm tracking-wide transition-colors flex items-center gap-1.5">
+          <span>Customer Reels</span>
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+        </a>
+        <a href="contact.html" class="font-medium text-slate-700 hover:text-emerald-600 text-sm tracking-wide transition-colors">Store & Contact</a>
+      </nav>
+
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="tel:+919876543210" class="px-4 py-2 rounded-xl text-sm font-bold text-slate-800 border border-slate-300 hover:bg-slate-50 transition-colors flex items-center gap-2">
+          <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Call Store
+        </a>
+        <a href="https://wa.me/919876543210?text=Hello%20OM%20SAI%20MOBILE!%20I%20need%20to%20repair%20my%20phone%20today." target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 shadow-sm hover:shadow transition-all flex items-center gap-2">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.966.565 3.805 1.554 5.371L2 22l4.757-1.527a9.98 9.98 0 005.274 1.488h.005c5.534 0 10.029-4.495 10.029-10.03 0-2.678-1.043-5.197-2.937-7.091A9.972 9.972 0 0012.031 2z"/></svg>
+          Book Repair Slot
+        </a>
+      </div>
+
+      <button id="mobileMenuBtn" aria-label="Open Navigation Menu" class="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop & Drawer -->
+  <div id="mobileMenuBackdrop" class="fixed inset-0 z-50 bg-slate-900/60 hidden opacity-0 transition-opacity duration-300"></div>
+  <div id="mobileMenuDrawer" class="fixed top-0 right-0 z-50 w-72 h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col justify-between p-6">
+    <div>
+      <div class="flex items-center justify-between pb-5 border-b border-slate-100">
+        <img src="logo/logo.svg" alt="OM SAI MOBILE" class="h-10 w-auto">
+        <button id="mobileMenuClose" aria-label="Close Navigation Menu" class="p-2 rounded-lg text-slate-500 hover:bg-slate-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <nav class="mt-6 flex flex-col gap-4">
+        <a href="index.html" class="flex items-center justify-between font-medium text-slate-700 p-2 rounded-lg hover:bg-slate-50">
+          <span>Home</span>
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="shop.html" class="flex items-center justify-between font-medium text-slate-700 p-2 rounded-lg hover:bg-slate-50">
+          <span>Mobiles & Accessories</span>
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="repair.html" class="flex items-center justify-between font-bold text-emerald-600 p-2 rounded-lg bg-emerald-50">
+          <div class="flex items-center gap-2">
+            <span>Express Repairs</span>
+            <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">30-Min</span>
+          </div>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="reels.html" class="flex items-center justify-between font-medium text-slate-700 p-2 rounded-lg hover:bg-slate-50">
+          <div class="flex items-center gap-2">
+            <span>Unboxing Reels</span>
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          </div>
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="contact.html" class="flex items-center justify-between font-medium text-slate-700 p-2 rounded-lg hover:bg-slate-50">
+          <span>Store & Directions</span>
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </nav>
+    </div>
+
+    <div class="pt-6 border-t border-slate-100 flex flex-col gap-3">
+      <div class="live-store-status text-center"></div>
+      <a href="tel:+919876543210" class="w-full text-center py-2.5 rounded-xl font-bold text-sm bg-slate-900 text-white">Call Shop Now</a>
+      <a href="https://wa.me/919876543210" target="_blank" class="w-full text-center py-2.5 rounded-xl font-bold text-sm bg-emerald-600 text-white">Order on WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- ================= HERO & INSTANT REPAIR CALCULATOR WIDGET ================= -->
+  <section class="bg-gradient-to-b from-slate-50 via-white to-slate-50/60 py-12 md:py-16 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Title -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold mb-3 border border-emerald-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Zero Secret Charges • 100% Upfront Pricing</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
+          Instant Mobile Repair Cost Calculator
+        </h1>
+        <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+          Select your smartphone brand and issue below to see real-time estimated pricing, express turnaround time, and warranty period. Book your slot on WhatsApp to ensure your replacement screen or battery is ready upon arrival!
+        </p>
+      </div>
+
+      <!-- Elevated Repair Calculator Container -->
+      <div class="max-w-4xl mx-auto bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
+        
+        <!-- Header Strip -->
+        <div class="bg-slate-900 px-6 py-4 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-slate-800">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center font-bold text-sm">
+              🔧
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-wider text-emerald-400 font-bold">OM SAI MOBILE Service Bench</p>
+              <h3 class="text-sm font-bold text-white">Live In-Store Quotation System</h3>
+            </div>
+          </div>
+          <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
+            Average Turnaround: 30 Mins
+          </span>
+        </div>
+
+        <!-- Calculator Body -->
+        <div class="p-6 sm:p-10 space-y-8">
+          
+          <!-- STEP 1: Select Brand -->
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <label class="text-xs font-bold uppercase tracking-wider text-slate-800 flex items-center gap-2">
+                <span class="w-5 h-5 rounded-full bg-slate-900 text-white flex items-center justify-center text-[11px]">1</span>
+                <span>Select Smartphone Brand</span>
+              </label>
+              <span class="text-xs text-slate-400">All major models supported</span>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+              <!-- Apple -->
+              <button 
+                type="button" 
+                data-brand="apple" 
+                class="brand-selector-btn active p-3.5 rounded-2xl border-2 border-emerald-500 bg-emerald-50/70 text-emerald-900 font-bold text-xs sm:text-sm flex flex-col items-center justify-center gap-1.5 transition-all text-center"
+              >
+                <span class="text-xl">🍎</span>
+                <span>Apple iPhone</span>
+              </button>
+
+              <!-- Samsung -->
+              <button 
+                type="button" 
+                data-brand="samsung" 
+                class="brand-selector-btn p-3.5 rounded-2xl border-2 border-slate-200 bg-white text-slate-700 hover:border-slate-300 font-bold text-xs sm:text-sm flex flex-col items-center justify-center gap-1.5 transition-all text-center"
+              >
+                <span class="text-xl">📱</span>
+                <span>Samsung Galaxy</span>
+              </button>
+
+              <!-- OnePlus -->
+              <button 
+                type="button" 
+                data-brand="oneplus" 
+                class="brand-selector-btn p-3.5 rounded-2xl border-2 border-slate-200 bg-white text-slate-700 hover:border-slate-300 font-bold text-xs sm:text-sm flex flex-col items-center justify-center gap-1.5 transition-all text-center"
+              >
+                <span class="text-xl">🔴</span>
+                <span>OnePlus</span>
+              </button>
+
+              <!-- Xiaomi -->
+              <button 
+                type="button" 
+                data-brand="xiaomi" 
+                class="brand-selector-btn p-3.5 rounded-2xl border-2 border-slate-200 bg-white text-slate-700 hover:border-slate-300 font-bold text-xs sm:text-sm flex flex-col items-center justify-center gap-1.5 transition-all text-center"
+              >
+                <span class="text-xl">🟧</span>
+                <span>Xiaomi / Redmi</span>
+              </button>
+
+              <!-- Vivo -->
+              <button 
+                type="button" 
+                data-brand="vivo" 
+                class="brand-selector-btn p-3.5 rounded-2xl border-2 border-slate-200 bg-white text-slate-700 hover:border-slate-300 font-bold text-xs sm:text-sm flex flex-col items-center justify-center gap-1.5 transition-all text-center"
+              >
+                <span class="text-xl">🔷</span>
+                <span>Vivo / iQOO</span>
+              </button>
+
+              <!-- Realme -->
+              <button 
+                type="button" 
+                data-brand="realme" 
+                class="brand-selector-btn p-3.5 rounded-2xl border-2 border-slate-200 bg-white text-slate-700 hover:border-slate-300 font-bold text-xs sm:text-sm flex flex-col items-center justify-center gap-1.5 transition-all text-center"
+              >
+                <span class="text-xl">🟡</span>
+                <span>Realme / Narzo</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: Select Issue Type -->
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <label class="text-xs font-bold uppercase tracking-wider text-slate-800 flex items-center gap-2">
+                <span class="w-5 h-5 rounded-full bg-slate-900 text-white flex items-center justify-center text-[11px]">2</span>
+                <span>Select Hardware Issue</span>
+              </label>
+              <span class="text-xs text-slate-400">Fixed right on our bench</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              
+              <!-- Screen -->
+              <button 
+                type="button" 
+                data-issue="screen" 
+                class="issue-selector-btn active p-4 rounded-2xl border-2 border-emerald-500 bg-emerald-50/70 text-left transition-all"
+              >
+                <div class="flex items-center gap-2.5">
+                  <span class="text-xl">📱</span>
+                  <div>
+                    <h4 class="font-bold text-xs sm:text-sm text-slate-900">Cracked Screen / Display</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Glass, touch, or lines on AMOLED</p>
+                  </div>
+                </div>
+              </button>
+
+              <!-- Battery -->
+              <button 
+                type="button" 
+                data-issue="battery" 
+                class="issue-selector-btn p-4 rounded-2xl border-2 border-slate-200 bg-white hover:border-slate-300 text-left transition-all"
+              >
+                <div class="flex items-center gap-2.5">
+                  <span class="text-xl">🔋</span>
+                  <div>
+                    <h4 class="font-bold text-xs sm:text-sm text-slate-900">Battery Drain / Swelling</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Quick drain, shutdown, health <80%</p>
+                  </div>
+                </div>
+              </button>
+
+              <!-- Charging Port -->
+              <button 
+                type="button" 
+                data-issue="charging" 
+                class="issue-selector-btn p-4 rounded-2xl border-2 border-slate-200 bg-white hover:border-slate-300 text-left transition-all"
+              >
+                <div class="flex items-center gap-2.5">
+                  <span class="text-xl">⚡</span>
+                  <div>
+                    <h4 class="font-bold text-xs sm:text-sm text-slate-900">Charging Port & Mic Flex</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Loose connector, slow charging</p>
+                  </div>
+                </div>
+              </button>
+
+              <!-- Water Damage -->
+              <button 
+                type="button" 
+                data-issue="water" 
+                class="issue-selector-btn p-4 rounded-2xl border-2 border-slate-200 bg-white hover:border-slate-300 text-left transition-all"
+              >
+                <div class="flex items-center gap-2.5">
+                  <span class="text-xl">💧</span>
+                  <div>
+                    <h4 class="font-bold text-xs sm:text-sm text-slate-900">Water Damage Ultrasonic</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Motherboard wash & corrosion revival</p>
+                  </div>
+                </div>
+              </button>
+
+              <!-- Camera Lens -->
+              <button 
+                type="button" 
+                data-issue="camera" 
+                class="issue-selector-btn p-4 rounded-2xl border-2 border-slate-200 bg-white hover:border-slate-300 text-left transition-all"
+              >
+                <div class="flex items-center gap-2.5">
+                  <span class="text-xl">📷</span>
+                  <div>
+                    <h4 class="font-bold text-xs sm:text-sm text-slate-900">Camera Lens & Blur Repair</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Cracked glass, unfocused lens, shaking</p>
+                  </div>
+                </div>
+              </button>
+
+              <!-- Speaker -->
+              <button 
+                type="button" 
+                data-issue="speaker" 
+                class="issue-selector-btn p-4 rounded-2xl border-2 border-slate-200 bg-white hover:border-slate-300 text-left transition-all"
+              >
+                <div class="flex items-center gap-2.5">
+                  <span class="text-xl">🔊</span>
+                  <div>
+                    <h4 class="font-bold text-xs sm:text-sm text-slate-900">Speaker & Ringer Repair</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Low call volume, cracked audio</p>
+                  </div>
+                </div>
+              </button>
+
+            </div>
+          </div>
+
+          <!-- STEP 3: Dynamic Live Quote Render Box -->
+          <div class="rounded-3xl bg-slate-900 p-6 sm:p-8 text-white relative overflow-hidden">
+            
+            <div class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+              
+              <!-- Quote Details -->
+              <div class="md:col-span-7 space-y-3">
+                <div class="flex items-center gap-2">
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                    Live Calculation
+                  </span>
+                  <span class="text-xs text-slate-400">Selected: <strong id="calcSelectedBrand" class="text-white">Apple iPhone</strong> • <span id="calcSelectedIssue" class="text-slate-300">Display Assembly</span></span>
+                </div>
+
+                <div class="pt-1">
+                  <p class="text-xs uppercase font-extrabold text-slate-400">Estimated Cost Range</p>
+                  <p id="calcEstimatedPrice" class="text-3xl sm:text-4xl font-black text-emerald-400 tracking-tight transition-opacity duration-200">
+                    ₹3,299 – ₹6,399
+                  </p>
+                  <p id="calcIssueDesc" class="text-xs text-slate-300 mt-2 leading-relaxed">
+                    Original grade FHD+ / AMOLED glass & touch digitizer replacement with 0% touch lag.
+                  </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 pt-3 border-t border-slate-800 text-xs">
+                  <div>
+                    <span class="text-slate-400 block font-medium">Turnaround Time:</span>
+                    <strong id="calcTurnaroundTime" class="text-white font-bold">30 – 45 Minutes</strong>
+                  </div>
+                  <div>
+                    <span class="text-slate-400 block font-medium">Warranty Coverage:</span>
+                    <strong id="calcWarranty" class="text-emerald-400 font-bold">90 Days Store Guarantee</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dispatch Button -->
+              <div class="md:col-span-5 flex flex-col gap-3">
+                <a 
+                  id="calcBookWhatsAppBtn" 
+                  href="#" 
+                  target="_blank" 
+                  class="w-full py-4 px-6 rounded-2xl font-black text-sm bg-emerald-500 hover:bg-emerald-400 text-slate-950 flex items-center justify-center gap-2 shadow-xl shadow-emerald-500/20 transition-all transform hover:-translate-y-0.5 text-center"
+                >
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.966.565 3.805 1.554 5.371L2 22l4.757-1.527a9.98 9.98 0 005.274 1.488h.005c5.534 0 10.029-4.495 10.029-10.03 0-2.678-1.043-5.197-2.937-7.091A9.972 9.972 0 0012.031 2z"/></svg>
+                  <span>Lock This Price & Book Slot</span>
+                </a>
+                
+                <p class="text-[11px] text-slate-400 text-center">
+                  ⚡ Pre-booking holds the exact OEM part at our counter so you don't wait.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 4-STEP WALK-IN REPAIR WORKFLOW ================= -->
+  <section class="py-16 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-600">Transparent Service Experience</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mt-1">
+          How Our In-Store Express Repair Works
+        </h2>
+        <p class="text-slate-500 text-sm mt-1">
+          No courier delays, no data factory reset fears. Completed right before your eyes.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        
+        <!-- Step 1 -->
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 relative">
+          <div class="w-10 h-10 rounded-xl bg-slate-900 text-white font-black text-sm flex items-center justify-center mb-4">
+            01
+          </div>
+          <h3 class="font-bold text-slate-900 text-base mb-1">Instant Online Quote</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            Check expected cost range on this page and notify technician on WhatsApp for stock lock.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 relative">
+          <div class="w-10 h-10 rounded-xl bg-slate-900 text-white font-black text-sm flex items-center justify-center mb-4">
+            02
+          </div>
+          <h3 class="font-bold text-slate-900 text-base mb-1">Walk Into Our Store</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            Hand over your device directly to our certified technician. Keep your phone lock PIN private.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 relative">
+          <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white font-black text-sm flex items-center justify-center mb-4">
+            03
+          </div>
+          <h3 class="font-bold text-slate-900 text-base mb-1">30-Min Live Bench Fix</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            Sit in our air-conditioned lounge while your handset is disassembled and fixed on the live workbench.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 relative">
+          <div class="w-10 h-10 rounded-xl bg-slate-900 text-white font-black text-sm flex items-center justify-center mb-4">
+            04
+          </div>
+          <h3 class="font-bold text-slate-900 text-base mb-1">Test & Stamped Warranty</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            Thoroughly test touch, brightness, and audio before paying. Walk out with your 90-day warranty card.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= TRANSPARENT SERVICE PRICE GUIDE TABLE ================= -->
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-600">Transparent Benchmark</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mt-1">
+            Service Price Guide & Turnaround Table
+          </h2>
+          <p class="text-slate-500 text-sm mt-1">
+            Standard pricing benchmarks based on device category. Parts and labor included.
+          </p>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto bg-white rounded-3xl border border-slate-200 shadow-sm">
+        <table class="w-full text-left border-collapse text-sm">
+          <thead>
+            <tr class="bg-slate-900 text-white text-xs uppercase tracking-wider">
+              <th class="p-4 sm:p-5 font-bold">Service Category</th>
+              <th class="p-4 sm:p-5 font-bold">Budget Phones (Redmi/Realme)</th>
+              <th class="p-4 sm:p-5 font-bold">Mid-Tier (OnePlus/Vivo)</th>
+              <th class="p-4 sm:p-5 font-bold">Flagships (iPhone/Galaxy S)</th>
+              <th class="p-4 sm:p-5 font-bold">Avg. Time</th>
+              <th class="p-4 sm:p-5 font-bold">Store Warranty</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-slate-700">
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="p-4 sm:p-5 font-bold text-slate-900 flex items-center gap-2">
+                <span>📱 Display Replacement</span>
+              </td>
+              <td class="p-4 sm:p-5">₹1,299 – ₹1,999</td>
+              <td class="p-4 sm:p-5">₹2,499 – ₹4,499</td>
+              <td class="p-4 sm:p-5">₹4,999 – ₹11,999</td>
+              <td class="p-4 sm:p-5 font-semibold text-emerald-600">30 – 45 Mins</td>
+              <td class="p-4 sm:p-5"><span class="px-2 py-1 rounded bg-emerald-50 text-emerald-800 text-xs font-bold">90 Days</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="p-4 sm:p-5 font-bold text-slate-900 flex items-center gap-2">
+                <span>🔋 Battery Replacement</span>
+              </td>
+              <td class="p-4 sm:p-5">₹899 – ₹1,299</td>
+              <td class="p-4 sm:p-5">₹1,299 – ₹1,699</td>
+              <td class="p-4 sm:p-5">₹1,899 – ₹3,299</td>
+              <td class="p-4 sm:p-5 font-semibold text-emerald-600">20 – 30 Mins</td>
+              <td class="p-4 sm:p-5"><span class="px-2 py-1 rounded bg-emerald-50 text-emerald-800 text-xs font-bold">180 Days</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="p-4 sm:p-5 font-bold text-slate-900 flex items-center gap-2">
+                <span>⚡ Charging Port Fix</span>
+              </td>
+              <td class="p-4 sm:p-5">₹599 – ₹899</td>
+              <td class="p-4 sm:p-5">₹799 – ₹1,199</td>
+              <td class="p-4 sm:p-5">₹1,199 – ₹1,899</td>
+              <td class="p-4 sm:p-5 font-semibold text-emerald-600">25 – 35 Mins</td>
+              <td class="p-4 sm:p-5"><span class="px-2 py-1 rounded bg-emerald-50 text-emerald-800 text-xs font-bold">90 Days</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="p-4 sm:p-5 font-bold text-slate-900 flex items-center gap-2">
+                <span>💧 Ultrasonic Water Clean</span>
+              </td>
+              <td class="p-4 sm:p-5">₹699 – ₹1,199</td>
+              <td class="p-4 sm:p-5">₹999 – ₹1,499</td>
+              <td class="p-4 sm:p-5">₹1,499 – ₹2,499</td>
+              <td class="p-4 sm:p-5 font-semibold text-emerald-600">45 – 60 Mins</td>
+              <td class="p-4 sm:p-5"><span class="px-2 py-1 rounded bg-slate-100 text-slate-800 text-xs font-bold">60 Days</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="p-4 sm:p-5 font-bold text-slate-900 flex items-center gap-2">
+                <span>📷 Camera Module / Lens</span>
+              </td>
+              <td class="p-4 sm:p-5">₹799 – ₹1,499</td>
+              <td class="p-4 sm:p-5">₹1,499 – ₹2,499</td>
+              <td class="p-4 sm:p-5">₹2,899 – ₹5,499</td>
+              <td class="p-4 sm:p-5 font-semibold text-emerald-600">30 – 40 Mins</td>
+              <td class="p-4 sm:p-5"><span class="px-2 py-1 rounded bg-emerald-50 text-emerald-800 text-xs font-bold">90 Days</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= REPAIR FAQ ACCORDION ================= -->
+  <section class="py-16 bg-white border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-10">
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+          Frequently Asked Repair Questions
+        </h2>
+        <p class="text-slate-500 text-sm mt-1">
+          Everything you should know before visiting our workbench.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <details class="group bg-slate-50 p-5 rounded-2xl border border-slate-200 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+          <summary class="flex items-center justify-between font-bold text-slate-900 text-sm sm:text-base">
+            <span>Do I have to share my phone lock screen passcode?</span>
+            <span class="text-emerald-600 font-black group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed border-t border-slate-200 pt-3">
+            <strong>No!</strong> We do not require your passcode. For display and touch testing, we use standard emergency dialer diagnostic codes or you can test and unlock the phone yourself before paying. Your photos, WhatsApp, and private banking data remain 100% untouched.
+          </p>
+        </details>
+
+        <details class="group bg-slate-50 p-5 rounded-2xl border border-slate-200 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+          <summary class="flex items-center justify-between font-bold text-slate-900 text-sm sm:text-base">
+            <span>How does the 90-Day Store Warranty work?</span>
+            <span class="text-emerald-600 font-black group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed border-t border-slate-200 pt-3">
+            Every screen and battery replacement comes with an official printed invoice stamped by OM SAI MOBILE. If your replacement touch digitizer shows phantom touch, color bleed, or battery fails to hold charge within 90 days (180 days for batteries), we replace it free of charge on spot without courier delays.
+          </p>
+        </details>
+
+        <details class="group bg-slate-50 p-5 rounded-2xl border border-slate-200 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+          <summary class="flex items-center justify-between font-bold text-slate-900 text-sm sm:text-base">
+            <span>Can I watch the repair while sitting at your store?</span>
+            <span class="text-emerald-600 font-black group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed border-t border-slate-200 pt-3">
+            Yes, absolutely. Our service desk features an open glass view. You are welcome to sit directly across from the technician or watch on our counter screen as your phone is disassembled and serviced.
+          </p>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= GLOBAL MASTER FOOTER ================= -->
+  <footer class="bg-slate-950 text-slate-400 pt-16 pb-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div>
+          <img src="logo/logo.svg" alt="OM SAI MOBILE" class="h-10 w-auto mb-4 filter brightness-125">
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Your neighborhood authorized retail showroom for sealed smartphones, genuine mobile accessories, and certified 30-minute hardware service.
+          </p>
+          <div class="flex items-center gap-2 text-xs font-semibold text-emerald-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span>100% Genuine Box-Pack Guarantee</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Quick Navigation</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="index.html" class="hover:text-emerald-400 transition-colors">Home Showcase</a></li>
+            <li><a href="shop.html" class="hover:text-emerald-400 transition-colors">Smartphones Catalog</a></li>
+            <li><a href="repair.html" class="hover:text-emerald-400 transition-colors font-bold text-emerald-400">Repair Cost Calculator</a></li>
+            <li><a href="reels.html" class="hover:text-emerald-400 transition-colors">Customer Unboxing Reels</a></li>
+            <li><a href="contact.html" class="hover:text-emerald-400 transition-colors">Store Geolocation & Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Express In-Store Services</h4>
+          <ul class="space-y-2 text-xs">
+            <li><span class="text-slate-300">Display Replacement (FHD+/AMOLED)</span></li>
+            <li><span class="text-slate-300">Fast Battery Swap & Calibration</span></li>
+            <li><span class="text-slate-300">Type-C & Lightning Port Repair</span></li>
+            <li><span class="text-slate-300">Water Damage Ultrasonic Treatment</span></li>
+            <li><span class="text-slate-300">Zero-Wait Old Phone Exchange</span></li>
+            <li><span class="text-slate-300">Free Phone Data Migration</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Store NAP & Hotline</h4>
+          <address class="not-italic text-xs space-y-2.5">
+            <p class="text-slate-300">
+              <strong class="text-white">OM SAI MOBILE</strong><br>
+              Shop No. 4, Ground Floor, Royal Plaza,<br>
+              Opposite City Bank ATM, Main Market Road,<br>
+              Ahmedabad - 380001, Gujarat, India.
+            </p>
+            <p>
+              <strong class="text-white">Phone:</strong> <a href="tel:+919876543210" class="hover:text-emerald-400">+91 98765 43210</a>
+            </p>
+            <p>
+              <strong class="text-white">WhatsApp:</strong> <a href="https://wa.me/919876543210" target="_blank" class="text-emerald-400 hover:underline">+91 98765 43210</a>
+            </p>
+          </address>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© 2026 OM SAI MOBILE. All rights reserved. Registered Retail Store.</p>
+        <p>All hardware repairs performed by certified technicians using OEM grade replacement parts</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= PERSISTENT BOTTOM ACTION BAR (MOBILE ONLY) ================= -->
+  <div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-lg border-t border-slate-200 px-3 py-2 shadow-2xl flex items-center gap-2">
+    <a href="tel:+919876543210" class="flex-1 py-2.5 px-3 rounded-xl font-bold text-xs bg-slate-900 text-white flex items-center justify-center gap-1.5 shadow">
+      <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+      <span>Call Shop</span>
+    </a>
+    <a href="https://wa.me/919876543210?text=Hi%20OM%20SAI%20MOBILE!%20I%20want%20to%20book%20a%20phone%20repair%20slot." target="_blank" class="flex-1 py-2.5 px-3 rounded-xl font-bold text-xs bg-emerald-600 text-white flex items-center justify-center gap-1.5 shadow">
+      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.966.565 3.805 1.554 5.371L2 22l4.757-1.527a9.98 9.98 0 005.274 1.488h.005c5.534 0 10.029-4.495 10.029-10.03 0-2.678-1.043-5.197-2.937-7.091A9.972 9.972 0 0012.031 2z"/></svg>
+      <span>WhatsApp Booking</span>
+    </a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/repair-calculator.js"></script>
+</body>
+</html>

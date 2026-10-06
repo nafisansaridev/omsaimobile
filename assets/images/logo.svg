@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="100%" height="100%">
+  <defs>
+    <linearGradient id="omGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="phoneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+  </defs>
+
+  <!-- Phone Emblem Container -->
+  <g transform="translate(10, 8)">
+    <!-- Smartphone Outline -->
+    <rect x="0" y="2" width="44" height="62" rx="10" fill="url(#phoneGrad)" stroke="#334155" stroke-width="2" />
+    <!-- Screen Area -->
+    <rect x="4" y="8" width="36" height="50" rx="6" fill="#0F172A" />
+    <!-- Dynamic Notch / Speaker -->
+    <rect x="16" y="4" width="12" height="3" rx="1.5" fill="#64748B" />
+    <!-- Brand Glyph: Stylized OM / Network Wave inside screen -->
+    <path d="M 14 34 C 14 26, 22 24, 25 28 C 28 24, 34 26, 34 32 C 34 39, 25 43, 22 47 L 34 47" fill="none" stroke="url(#omGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    <circle cx="28" cy="22" r="2" fill="#10B981" />
+    <!-- Verified Mini Sparkle / Check -->
+    <circle cx="38" cy="10" r="6" fill="#10B981" />
+    <path d="M 35 10 L 37.5 12.5 L 41.5 8" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Typography: OM SAI MOBILE -->
+  <g transform="translate(68, 16)">
+    <!-- Top Wordmark -->
+    <text x="0" y="28" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-weight="900" font-size="28" letter-spacing="-0.5" fill="#0F172A">
+      OM SAI <tspan fill="#10B981">MOBILE</tspan>
+    </text>
+    
+    <!-- Subtitle / Tagline -->
+    <text x="1" y="45" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.8" fill="#64748B">
+      SMARTPHONES • ACCESSORIES • REPAIRS
+    </text>
+  </g>
+</svg>
