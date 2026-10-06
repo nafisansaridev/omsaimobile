@@ -107,16 +107,16 @@ function initReelsModal() {
     modalDesc.textContent = data.desc;
     modalPrice.textContent = data.price;
 
-    const storeNumber = "919876543210";
+    const storeNumber = "919821593333";
     if (data.type === 'repair') {
-      const msg = `Hello OM SAI MOBILE! I watched your reel "${data.title}" and would like to inquire about express repair for ${data.phone}.`;
+      const msg = `Hello OM SAI MOBILE SHOP KALAMBOLI! I watched your reel "${data.title}" and would like to inquire about express repair for ${data.phone}.`;
       modalActionBtn.href = `https://wa.me/${storeNumber}?text=${encodeURIComponent(msg)}`;
       modalActionBtn.innerHTML = `
         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.966.565 3.805 1.554 5.371L2 22l4.757-1.527a9.98 9.98 0 005.274 1.488h.005c5.534 0 10.029-4.495 10.029-10.03 0-2.678-1.043-5.197-2.937-7.091A9.972 9.972 0 0012.031 2z"/></svg>
         Book Express Repair on WhatsApp
       `;
     } else {
-      const msg = `Hello OM SAI MOBILE! I watched your store reel for ${data.customer} with ${data.phone} (${data.price}). I want to order/inquire about this model.`;
+      const msg = `Hello OM SAI MOBILE SHOP KALAMBOLI! I watched your store reel for ${data.customer} with ${data.phone} (${data.price}). I want to order/inquire about this model.`;
       modalActionBtn.href = `https://wa.me/${storeNumber}?text=${encodeURIComponent(msg)}`;
       modalActionBtn.innerHTML = `
         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.966.565 3.805 1.554 5.371L2 22l4.757-1.527a9.98 9.98 0 005.274 1.488h.005c5.534 0 10.029-4.495 10.029-10.03 0-2.678-1.043-5.197-2.937-7.091A9.972 9.972 0 0012.031 2z"/></svg>

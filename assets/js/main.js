@@ -43,35 +43,23 @@ function initMobileNav() {
   if (backdrop) backdrop.addEventListener('click', closeDrawer);
 }
 
-// Live Store Status Calculator
+// Live Store Status Calculator (Open Daily: 9:00 AM - 10:00 PM)
 function initLiveStoreStatus() {
   const statusElements = document.querySelectorAll('.live-store-status');
   if (statusElements.length === 0) return;
 
   const now = new Date();
-  const day = now.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
   const hour = now.getHours();
   const minute = now.getMinutes();
   const currentTimeInMinutes = hour * 60 + minute;
 
   let isOpen = false;
-  let closeTimeString = '9:30 PM';
-  let openTimeString = '10:00 AM';
+  const closeTimeString = '10:00 PM';
+  const openTimeString = '9:00 AM';
 
-  if (day === 0) {
-    // Sunday: 11:00 AM - 8:00 PM (660 min to 1200 min)
-    closeTimeString = '8:00 PM';
-    openTimeString = '11:00 AM';
-    if (currentTimeInMinutes >= 11 * 60 && currentTimeInMinutes < 20 * 60) {
-      isOpen = true;
-    }
-  } else {
-    // Monday - Saturday: 10:00 AM - 9:30 PM (600 min to 1290 min)
-    closeTimeString = '9:30 PM';
-    openTimeString = '10:00 AM';
-    if (currentTimeInMinutes >= 10 * 60 && currentTimeInMinutes < 21 * 60 + 30) {
-      isOpen = true;
-    }
+  // Open 7 days a week: 9:00 AM (540 min) to 10:00 PM (1320 min)
+  if (currentTimeInMinutes >= 9 * 60 && currentTimeInMinutes < 22 * 60) {
+    isOpen = true;
   }
 
   statusElements.forEach(el => {
@@ -141,8 +129,8 @@ function showToast(message, type = 'success') {
 
 // Generate Dynamic WhatsApp URL helper
 function generateWhatsAppOrderLink(productName, variant, price) {
-  const storePhoneNumber = "919876543210";
-  const rawMessage = `Hello OM SAI MOBILE! I am interested in purchasing:\n\n📱 *Product:* ${productName}\n⚙️ *Variant:* ${variant}\n💰 *Price:* ${price}\n\nPlease confirm store availability and payment/pickup options.`;
+  const storePhoneNumber = "919821593333";
+  const rawMessage = `Hello OM SAI MOBILE SHOP! I am interested in purchasing:\n\n📱 *Product:* ${productName}\n⚙️ *Variant:* ${variant}\n💰 *Price:* ${price}\n\nPlease confirm store availability and pickup at your Kalamboli shop.`;
   return `https://wa.me/${storePhoneNumber}?text=${encodeURIComponent(rawMessage)}`;
 }
 

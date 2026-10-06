@@ -134,8 +134,8 @@ function initRepairCalculator() {
     if (selectedIssueName) selectedIssueName.textContent = issue.name;
 
     // WhatsApp dynamic booking URL
-    const storeNumber = "919876543210";
-    const rawMessage = `Hello OM SAI MOBILE! I would like to book an Express In-Store Repair slot:\n\n📱 *Device Brand:* ${brand.name} (${brand.typicalModels})\n🔧 *Issue:* ${issue.name}\n💰 *Estimated Quote:* ${formattedRange}\n⏱️ *Turnaround:* ${issue.time}\n🛡️ *Warranty:* ${issue.warranty}\n\nPlease confirm technician availability and reserve my priority slot.`;
+    const storeNumber = "919821593333";
+    const rawMessage = `Hello OM SAI MOBILE SHOP KALAMBOLI! I would like to book an Express In-Store Repair slot:\n\n📱 *Device Brand:* ${brand.name} (${brand.typicalModels})\n🔧 *Issue:* ${issue.name}\n💰 *Estimated Quote:* ${formattedRange}\n⏱️ *Turnaround:* ${issue.time}\n🛡️ *Warranty:* ${issue.warranty}\n\nPlease confirm technician availability at your Kalamboli shop and reserve my slot.`;
 
     if (bookBtn) {
       bookBtn.href = `https://wa.me/${storeNumber}?text=${encodeURIComponent(rawMessage)}`;

@@ -153,7 +153,7 @@ function renderProductCard(p) {
   const discountPercent = Math.round(((p.mrp - p.price) / p.mrp) * 100);
   const waUrl = window.generateWhatsAppOrderLink ? 
     window.generateWhatsAppOrderLink(p.name, p.variant, formatPriceINR(p.price)) : 
-    `https://wa.me/919876543210?text=Hi%20OM%20SAI%20MOBILE,%20I%20want%20to%20buy%20${encodeURIComponent(p.name)}%20at%20${encodeURIComponent(formatPriceINR(p.price))}`;
+    `https://wa.me/919821593333?text=Hi%20OM%20SAI%20MOBILE%20SHOP%20KALAMBOLI,%20I%20want%20to%20buy%20${encodeURIComponent(p.name)}%20at%20${encodeURIComponent(formatPriceINR(p.price))}`;
 
   const stockBadgeClass = p.stockStatus === 'in-stock' 
     ? 'bg-emerald-50 text-emerald-700 border-emerald-200' 
