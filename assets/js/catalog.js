@@ -293,11 +293,9 @@ function initCatalogPage() {
   filterPills.forEach(pill => {
     pill.addEventListener('click', () => {
       filterPills.forEach(p => {
-        p.classList.remove('bg-slate-900', 'text-white');
-        p.classList.add('bg-slate-100', 'text-slate-700', 'hover:bg-slate-200');
+        p.className = 'catalog-filter-pill px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors shrink-0';
       });
-      pill.classList.remove('bg-slate-100', 'text-slate-700', 'hover:bg-slate-200');
-      pill.classList.add('bg-slate-900', 'text-white');
+      pill.className = 'catalog-filter-pill px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-md shadow-orange-500/20 transition-all shrink-0';
 
       currentCategory = pill.dataset.category || 'all';
       applyFiltersAndRender();
@@ -338,11 +336,9 @@ function initFeaturedProducts() {
   homeCategoryPills.forEach(pill => {
     pill.addEventListener('click', () => {
       homeCategoryPills.forEach(p => {
-        p.classList.remove('bg-slate-900', 'text-white');
-        p.classList.add('bg-slate-100', 'text-slate-700', 'hover:bg-slate-200');
+        p.className = 'home-cat-filter-pill px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors shrink-0';
       });
-      pill.classList.remove('bg-slate-100', 'text-slate-700', 'hover:bg-slate-200');
-      pill.classList.add('bg-slate-900', 'text-white');
+      pill.className = 'home-cat-filter-pill px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-md shadow-orange-500/20 transition-all shrink-0';
 
       const cat = pill.dataset.category || 'all';
       renderFeatured(cat);

@@ -213,11 +213,9 @@ function initReelsFilter() {
   filterTabs.forEach(tab => {
     tab.addEventListener('click', () => {
       filterTabs.forEach(t => {
-        t.classList.remove('bg-slate-900', 'text-white');
-        t.classList.add('bg-slate-100', 'text-slate-700', 'hover:bg-slate-200');
+        t.className = 'reels-filter-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white/20 hover:bg-white/30 backdrop-blur-md text-white border border-white/30 transition-all';
       });
-      tab.classList.remove('bg-slate-100', 'text-slate-700', 'hover:bg-slate-200');
-      tab.classList.add('bg-slate-900', 'text-white');
+      tab.className = 'reels-filter-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black bg-white text-orange-700 shadow-xl transition-all';
 
       const category = tab.dataset.category || 'all';
 

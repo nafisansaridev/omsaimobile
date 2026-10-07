@@ -188,12 +188,18 @@ body {
   }
 }
 
+.glass-footer {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFBF5 40%, #FEF3C7 100%);
+  border-top: 1px solid rgba(249, 115, 22, 0.2);
+}
+
 .top-ticker-wrapper {
   position: relative;
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
-  background-color: #020617;
+  background: linear-gradient(90deg, #EA580C 0%, #D97706 50%, #059669 100%);
+  color: #FFFFFF;
 }
 
 .top-ticker-wrapper::before,
@@ -209,12 +215,12 @@ body {
 
 .top-ticker-wrapper::before {
   left: 0;
-  background: linear-gradient(to right, #020617 15%, transparent);
+  background: linear-gradient(to right, #EA580C 15%, transparent);
 }
 
 .top-ticker-wrapper::after {
   right: 0;
-  background: linear-gradient(to left, #020617 15%, transparent);
+  background: linear-gradient(to left, #059669 15%, transparent);
 }
 
 .top-ticker-track {

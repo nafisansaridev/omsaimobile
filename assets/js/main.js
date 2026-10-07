@@ -63,11 +63,11 @@ function initLiveStoreStatus() {
   }
 
   statusElements.forEach(el => {
-    const isDarkBar = el.closest('.bg-slate-950') !== null;
+    const isGradientOrTicker = el.closest('.top-ticker-wrapper') !== null || el.closest('.bg-gradient-to-br') !== null || el.closest('.bg-slate-950') !== null;
     if (isOpen) {
-      if (isDarkBar) {
-        el.innerHTML = `<span class="inline-flex items-center gap-1.5 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+      if (isGradientOrTicker) {
+        el.innerHTML = `<span class="inline-flex items-center gap-1.5 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold bg-white/20 backdrop-blur-md text-white border border-white/40">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse"></span>
           Open Now • Closes ${closeTimeString}
         </span>`;
       } else {
@@ -77,9 +77,9 @@ function initLiveStoreStatus() {
         </span>`;
       }
     } else {
-      if (isDarkBar) {
-        el.innerHTML = `<span class="inline-flex items-center gap-1.5 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold bg-slate-800 text-slate-300 border border-slate-700">
-          <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
+      if (isGradientOrTicker) {
+        el.innerHTML = `<span class="inline-flex items-center gap-1.5 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold bg-white/20 backdrop-blur-md text-rose-200 border border-white/40">
+          <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
           Closed Now • Opens ${openTimeString}
         </span>`;
       } else {
