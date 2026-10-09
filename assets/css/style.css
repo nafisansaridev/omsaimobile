@@ -27,10 +27,10 @@
   --bg-subtle-tint: #FFFDF9;
   
   /* Texture & Ambient Lighting Tokens */
-  --texture-diagonal-color: rgba(180, 130, 90, 0.038);
+  --texture-diagonal-color: rgba(180, 115, 70, 0.055);
   --texture-diagonal-size: 28px;
-  --ambient-orange-glow: rgba(249, 115, 22, 0.065);
-  --ambient-emerald-glow: rgba(16, 185, 129, 0.045);
+  --ambient-orange-glow: rgba(249, 115, 22, 0.20);
+  --ambient-emerald-glow: rgba(16, 185, 129, 0.16);
   --border-warm-subtle: rgba(234, 88, 12, 0.12);
   --border-warm-card: rgba(234, 88, 12, 0.16);
 }
@@ -48,10 +48,10 @@ body {
    Om Sai Mobile - Reusable Background Variants & Texture Utility
    ========================================================================== */
 
-/* Signature Diagonal Texture (CSS Repeating Linear Gradient) */
+/* Signature Diagonal Texture (CSS Repeating Linear Gradient - upper-left to lower-right) */
 .texture-diagonal {
   background-image: repeating-linear-gradient(
-    45deg,
+    -45deg,
     var(--texture-diagonal-color) 0px,
     var(--texture-diagonal-color) 1px,
     transparent 1px,
@@ -64,10 +64,10 @@ body {
   position: relative;
   background-color: var(--bg-warm-ivory);
   background-image: 
-    radial-gradient(ellipse 75% 65% at 90% 12%, var(--ambient-orange-glow) 0%, rgba(249, 115, 22, 0.02) 45%, transparent 70%),
-    radial-gradient(ellipse 65% 55% at 10% 88%, var(--ambient-emerald-glow) 0%, rgba(16, 185, 129, 0.015) 40%, transparent 65%),
+    radial-gradient(ellipse 65% 55% at 95% 5%, var(--ambient-orange-glow) 0%, rgba(249, 115, 22, 0.10) 35%, rgba(251, 146, 60, 0.03) 60%, transparent 80%),
+    radial-gradient(ellipse 60% 55% at 5% 95%, var(--ambient-emerald-glow) 0%, rgba(16, 185, 129, 0.08) 35%, rgba(52, 211, 153, 0.025) 60%, transparent 80%),
     repeating-linear-gradient(
-      45deg,
+      -45deg,
       var(--texture-diagonal-color) 0px,
       var(--texture-diagonal-color) 1px,
       transparent 1px,
@@ -108,13 +108,26 @@ body {
   box-shadow: 0 12px 24px -6px rgba(234, 88, 12, 0.08), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
 }
 
-/* Tablet & Mobile Media Queries for Optimal Performance & Subtlety */
+/* Tablet & Mobile Media Queries for Optimal Atmosphere & Responsiveness */
 @media (max-width: 768px) {
   :root {
-    --texture-diagonal-color: rgba(180, 130, 90, 0.02);
-    --texture-diagonal-size: 24px;
-    --ambient-orange-glow: rgba(249, 115, 22, 0.04);
-    --ambient-emerald-glow: rgba(16, 185, 129, 0.03);
+    --texture-diagonal-color: rgba(180, 115, 70, 0.05);
+    --texture-diagonal-size: 26px;
+    --ambient-orange-glow: rgba(249, 115, 22, 0.22);
+    --ambient-emerald-glow: rgba(16, 185, 129, 0.18);
+  }
+
+  .bg-signature-warm {
+    background-image: 
+      radial-gradient(circle 320px at 95% 4%, var(--ambient-orange-glow) 0%, rgba(249, 115, 22, 0.09) 35%, rgba(251, 146, 60, 0.025) 60%, transparent 80%),
+      radial-gradient(circle 300px at 5% 96%, var(--ambient-emerald-glow) 0%, rgba(16, 185, 129, 0.08) 35%, rgba(52, 211, 153, 0.02) 60%, transparent 80%),
+      repeating-linear-gradient(
+        -45deg,
+        var(--texture-diagonal-color) 0px,
+        var(--texture-diagonal-color) 1px,
+        transparent 1px,
+        transparent var(--texture-diagonal-size)
+      );
   }
 }
 
