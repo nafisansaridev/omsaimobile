@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initLiveStoreStatus();
   initStickyHeader();
+  initHeroPhoneMockup();
 });
 
 // Mobile Navigation Drawer
@@ -99,13 +100,56 @@ function initStickyHeader() {
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
-      header.classList.add('shadow-md', 'bg-white/95');
-      header.classList.remove('bg-white/85');
+      header.classList.add('shadow-md', 'bg-white/88');
+      header.classList.remove('bg-white/78');
     } else {
-      header.classList.remove('shadow-md', 'bg-white/95');
-      header.classList.add('bg-white/85');
+      header.classList.remove('shadow-md', 'bg-white/88');
+      header.classList.add('bg-white/78');
     }
   });
+}
+
+// Interactive Hero Smartphone Mockup Live Clock & Status
+function initHeroPhoneMockup() {
+  const statusTimeEl = document.getElementById('phoneStatusTime');
+  const clockEl = document.getElementById('phoneClock');
+  const dateEl = document.getElementById('phoneDate');
+  const storeBadgeEl = document.getElementById('phoneStoreBadge');
+
+  if (!statusTimeEl && !clockEl) return;
+
+  function updateTime() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const formattedHours = String(hours).padStart(2, '0');
+    const formattedMinutes = String(minutes).padStart(2, '0');
+    const timeStr = `${formattedHours}:${formattedMinutes}`;
+
+    if (statusTimeEl) statusTimeEl.textContent = timeStr;
+    if (clockEl) clockEl.textContent = timeStr;
+
+    if (dateEl) {
+      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      dateEl.textContent = `${days[now.getDay()]} ${now.getDate()} ${months[now.getMonth()]}`;
+    }
+
+    if (storeBadgeEl) {
+      const currentMin = hours * 60 + minutes;
+      const isOpen = currentMin >= 9 * 60 && currentMin < 22 * 60;
+      if (isOpen) {
+        storeBadgeEl.className = 'mt-2 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100/90 text-emerald-800 border border-emerald-300 shadow-sm';
+        storeBadgeEl.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span><span>Open Now • Closes 10:00 PM</span>`;
+      } else {
+        storeBadgeEl.className = 'mt-2 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-rose-100/90 text-rose-800 border border-rose-200 shadow-sm';
+        storeBadgeEl.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span><span>Closed • Opens 9:00 AM</span>`;
+      }
+    }
+  }
+
+  updateTime();
+  setInterval(updateTime, 1000);
 }
 
 // Global Toast Notification Helper
