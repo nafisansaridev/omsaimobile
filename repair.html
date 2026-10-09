@@ -281,7 +281,7 @@
   </div>
 
   <!-- ================= HERO & INSTANT REPAIR CALCULATOR WIDGET ================= -->
-  <section class="bg-gradient-to-b from-slate-50 via-white to-slate-50/60 py-12 md:py-16 border-b border-slate-200">
+  <section class="bg-signature-warm py-12 md:py-16 border-b border-orange-100/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <!-- Section Title -->
@@ -306,7 +306,7 @@
 
         <!-- Header Strip -->
         <div
-          class="bg-gradient-to-r from-orange-500 via-amber-500 to-emerald-600 px-6 py-4 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-white/20">
+          class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 px-6 py-4 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-slate-700/80">
           <div class="flex items-center gap-3">
             <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center font-bold text-sm">
               🔧
@@ -317,7 +317,7 @@
             </div>
           </div>
           <span
-            class="text-xs font-bold px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white border border-white/40">
+            class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
             Average Turnaround: 30 Mins
           </span>
         </div>
@@ -470,7 +470,7 @@
           </div>
 
           <!-- STEP 3: Dynamic Live Quote Render Box -->
-          <div class="rounded-3xl bg-gradient-to-br from-orange-500 via-amber-500 to-emerald-600 p-6 sm:p-8 text-white relative overflow-hidden shadow-2xl border border-white/20">
+          <div class="rounded-3xl bg-subtle-accent p-6 sm:p-8 text-slate-900 relative overflow-hidden shadow-xl border border-orange-200/90">
 
             <div class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
 
@@ -478,33 +478,33 @@
               <div class="md:col-span-7 space-y-3">
                 <div class="flex items-center gap-2">
                   <span
-                    class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-white/20 backdrop-blur-md text-white border border-white/40">
+                    class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-orange-100 text-orange-900 border border-orange-200/80">
                     Live Calculation
                   </span>
-                  <span class="text-xs text-amber-100">Selected: <strong id="calcSelectedBrand" class="text-white">Apple
-                      iPhone</strong> • <span id="calcSelectedIssue" class="text-white font-bold">Display
+                  <span class="text-xs text-slate-500">Selected: <strong id="calcSelectedBrand" class="text-slate-900">Apple
+                      iPhone</strong> • <span id="calcSelectedIssue" class="text-slate-900 font-bold">Display
                       Assembly</span></span>
                 </div>
 
                 <div class="pt-1">
-                  <p class="text-xs uppercase font-extrabold text-amber-100">Estimated Cost Range</p>
+                  <p class="text-xs uppercase font-extrabold text-orange-600 tracking-wider">Estimated Cost Range</p>
                   <p id="calcEstimatedPrice"
-                    class="text-3xl sm:text-4xl font-black text-white tracking-tight transition-opacity duration-200">
+                    class="text-3xl sm:text-4xl font-black text-emerald-600 tracking-tight transition-opacity duration-200">
                     ₹3,299 – ₹6,399
                   </p>
-                  <p id="calcIssueDesc" class="text-xs text-amber-50 mt-2 leading-relaxed font-medium">
+                  <p id="calcIssueDesc" class="text-xs text-slate-600 mt-2 leading-relaxed font-medium">
                     Original grade FHD+ / AMOLED glass & touch digitizer replacement with 0% touch lag.
                   </p>
                 </div>
 
-                <div class="grid grid-cols-2 gap-3 pt-3 border-t border-white/20 text-xs">
+                <div class="grid grid-cols-2 gap-3 pt-3 border-t border-slate-200/80 text-xs">
                   <div>
-                    <span class="text-amber-100 block font-medium">Turnaround Time:</span>
-                    <strong id="calcTurnaroundTime" class="text-white font-bold">30 – 45 Minutes</strong>
+                    <span class="text-slate-500 block font-medium">Turnaround Time:</span>
+                    <strong id="calcTurnaroundTime" class="text-slate-900 font-bold">30 – 45 Minutes</strong>
                   </div>
                   <div>
-                    <span class="text-amber-100 block font-medium">Warranty Coverage:</span>
-                    <strong id="calcWarranty" class="text-emerald-200 font-bold">90 Days Store Guarantee</strong>
+                    <span class="text-slate-500 block font-medium">Warranty Coverage:</span>
+                    <strong id="calcWarranty" class="text-emerald-700 font-bold">90 Days Store Guarantee</strong>
                   </div>
                 </div>
               </div>
@@ -512,15 +512,15 @@
               <!-- Dispatch Button -->
               <div class="md:col-span-5 flex flex-col gap-3">
                 <a id="calcBookWhatsAppBtn" href="#" target="_blank"
-                  class="w-full py-4 px-6 rounded-2xl font-black text-sm bg-white hover:bg-orange-50 text-orange-700 flex items-center justify-center gap-2 shadow-2xl transition-all transform hover:-translate-y-0.5 text-center">
-                  <svg class="w-5 h-5 fill-current text-orange-600" viewBox="0 0 24 24">
+                  class="w-full py-4 px-6 rounded-2xl font-black text-sm bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white flex items-center justify-center gap-2 shadow-lg shadow-orange-500/25 transition-all transform hover:-translate-y-0.5 text-center">
+                  <svg class="w-5 h-5 fill-current text-white" viewBox="0 0 24 24">
                     <path
                       d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.966.565 3.805 1.554 5.371L2 22l4.757-1.527a9.98 9.98 0 005.274 1.488h.005c5.534 0 10.029-4.495 10.029-10.03 0-2.678-1.043-5.197-2.937-7.091A9.972 9.972 0 0012.031 2z" />
                   </svg>
                   <span>Lock This Price & Book Slot</span>
                 </a>
 
-                <p class="text-[11px] text-amber-100 text-center font-medium">
+                <p class="text-[11px] text-slate-500 text-center font-medium">
                   ⚡ Pre-booking holds the exact OEM part at our counter so you don't wait.
                 </p>
               </div>
@@ -537,7 +537,7 @@
   </section>
 
   <!-- ================= 4-STEP WALK-IN REPAIR WORKFLOW ================= -->
-  <section class="py-16 bg-white border-b border-slate-200">
+  <section class="py-16 bg-clean-white border-b border-slate-200/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <div class="text-center max-w-2xl mx-auto mb-12">
@@ -606,7 +606,7 @@
   </section>
 
   <!-- ================= TRANSPARENT SERVICE PRICE GUIDE TABLE ================= -->
-  <section class="py-16 bg-slate-50">
+  <section class="py-16 bg-soft-ivory border-b border-orange-100/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
@@ -624,7 +624,7 @@
       <div class="overflow-x-auto bg-white rounded-3xl border border-slate-200 shadow-sm">
         <table class="w-full text-left border-collapse text-sm">
           <thead>
-            <tr class="bg-gradient-to-r from-orange-500 via-amber-500 to-emerald-600 text-white text-xs uppercase tracking-wider">
+            <tr class="bg-slate-900 text-white text-xs uppercase tracking-wider">
               <th class="p-4 sm:p-5 font-bold">Service Category</th>
               <th class="p-4 sm:p-5 font-bold">Budget Phones (Redmi/Realme)</th>
               <th class="p-4 sm:p-5 font-bold">Mid-Tier (OnePlus/Vivo)</th>
@@ -697,7 +697,7 @@
   </section>
 
   <!-- ================= REPAIR FAQ ACCORDION ================= -->
-  <section class="py-16 bg-white border-t border-slate-200">
+  <section class="py-16 bg-clean-white border-t border-slate-200/80">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <div class="text-center mb-10">
