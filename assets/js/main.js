@@ -120,9 +120,10 @@ function initHeroPhoneMockup() {
 
   function updateTime() {
     const now = new Date();
-    const hours = now.getHours();
+    const hours24 = now.getHours();
     const minutes = now.getMinutes();
-    const formattedHours = String(hours).padStart(2, '0');
+    const hours12 = hours24 % 12 || 12;
+    const formattedHours = String(hours12).padStart(2, '0');
     const formattedMinutes = String(minutes).padStart(2, '0');
     const timeStr = `${formattedHours}:${formattedMinutes}`;
 
@@ -136,7 +137,7 @@ function initHeroPhoneMockup() {
     }
 
     if (storeBadgeEl) {
-      const currentMin = hours * 60 + minutes;
+      const currentMin = hours24 * 60 + minutes;
       const isOpen = currentMin >= 9 * 60 && currentMin < 22 * 60;
       if (isOpen) {
         storeBadgeEl.className = 'mt-2 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100/90 text-emerald-800 border border-emerald-300 shadow-sm';
