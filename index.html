@@ -557,6 +557,34 @@
     </div>
   </section>
 
+  <!-- ================= ADVERTISEMENT BANNER SECTION ================= -->
+  <section class="py-3 sm:py-4 lg:py-5 bg-soft-ivory border-b border-orange-100/60 relative overflow-hidden" aria-label="Store Advertisement">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Glassmorphic Banner Card (Matching layout, proportional height without cropping) -->
+      <div class="relative rounded-2xl sm:rounded-3xl bg-white/75 backdrop-blur-xl border border-white/90 p-1.5 sm:p-2.5 md:p-3 shadow-2xl shadow-orange-500/10 ring-1 ring-orange-500/10 overflow-hidden w-full transition-all duration-300 hover:shadow-orange-500/15">
+        
+        <!-- Subtle Glass Reflection / Sheen -->
+        <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/30 pointer-events-none rounded-2xl sm:rounded-3xl"></div>
+
+        <!-- Responsive Advertisement: Desktop Landscape, Mobile Portrait -->
+        <picture class="block w-full">
+          <!-- Desktop / Tablet (min-width: 768px): Landscape Banner -->
+          <source media="(min-width: 768px)" srcset="assets/background/advertisement(landscape).png">
+          <!-- Mobile (under 768px): Portrait Banner -->
+          <img 
+            src="assets/background/advertisement(portrait).png" 
+            alt="OM SAI MOBILE Store Offers & In-Store Advertisement" 
+            class="w-full h-auto object-cover rounded-xl sm:rounded-2xl shadow-sm block"
+            loading="lazy"
+          />
+        </picture>
+
+      </div>
+
+    </div>
+  </section>
+
   <!-- ================= 2. INSTANT SOCIAL PROOF: STORE UNBOXING REELS & HANDOVERS ================= -->
   <section class="py-16 bg-soft-ivory border-b border-orange-100/60 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
