@@ -25,7 +25,7 @@
   --bg-soft-ivory: #FBF9F5;
   --bg-clean-white: #FFFFFF;
   --bg-subtle-tint: #FFFDF9;
-  
+
   /* Texture & Ambient Lighting Tokens */
   --texture-diagonal-color: rgba(180, 115, 70, 0.055);
   --texture-diagonal-size: 28px;
@@ -50,29 +50,25 @@ body {
 
 /* Signature Diagonal Texture (CSS Repeating Linear Gradient - upper-left to lower-right) */
 .texture-diagonal {
-  background-image: repeating-linear-gradient(
-    -45deg,
-    var(--texture-diagonal-color) 0px,
-    var(--texture-diagonal-color) 1px,
-    transparent 1px,
-    transparent var(--texture-diagonal-size)
-  );
+  background-image: repeating-linear-gradient(-45deg,
+      var(--texture-diagonal-color) 0px,
+      var(--texture-diagonal-color) 1px,
+      transparent 1px,
+      transparent var(--texture-diagonal-size));
 }
 
 /* Variant A: Signature Warm Background (Hero & Major Page Introductions) */
 .bg-signature-warm {
   position: relative;
   background-color: var(--bg-warm-ivory);
-  background-image: 
+  background-image:
     radial-gradient(ellipse 65% 55% at 95% 5%, var(--ambient-orange-glow) 0%, rgba(249, 115, 22, 0.10) 35%, rgba(251, 146, 60, 0.03) 60%, transparent 80%),
     radial-gradient(ellipse 60% 55% at 5% 95%, var(--ambient-emerald-glow) 0%, rgba(16, 185, 129, 0.08) 35%, rgba(52, 211, 153, 0.025) 60%, transparent 80%),
-    repeating-linear-gradient(
-      -45deg,
+    repeating-linear-gradient(-45deg,
       var(--texture-diagonal-color) 0px,
       var(--texture-diagonal-color) 1px,
       transparent 1px,
-      transparent var(--texture-diagonal-size)
-    );
+      transparent var(--texture-diagonal-size));
 }
 
 /* Variant B: Clean White Background (Catalogs, Specifications, Process, Forms) */
@@ -84,7 +80,7 @@ body {
 .bg-soft-ivory {
   position: relative;
   background-color: var(--bg-soft-ivory);
-  background-image: 
+  background-image:
     radial-gradient(ellipse 60% 45% at 95% 40%, rgba(249, 115, 22, 0.03) 0%, transparent 65%),
     radial-gradient(ellipse 55% 45% at 5% 60%, rgba(16, 185, 129, 0.02) 0%, transparent 60%);
 }
@@ -118,16 +114,14 @@ body {
   }
 
   .bg-signature-warm {
-    background-image: 
+    background-image:
       radial-gradient(circle 320px at 95% 4%, var(--ambient-orange-glow) 0%, rgba(249, 115, 22, 0.09) 35%, rgba(251, 146, 60, 0.025) 60%, transparent 80%),
       radial-gradient(circle 300px at 5% 96%, var(--ambient-emerald-glow) 0%, rgba(16, 185, 129, 0.08) 35%, rgba(52, 211, 153, 0.02) 60%, transparent 80%),
-      repeating-linear-gradient(
-        -45deg,
+      repeating-linear-gradient(-45deg,
         var(--texture-diagonal-color) 0px,
         var(--texture-diagonal-color) 1px,
         transparent 1px,
-        transparent var(--texture-diagonal-size)
-      );
+        transparent var(--texture-diagonal-size));
   }
 }
 
@@ -145,20 +139,34 @@ body {
   position: relative;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.375rem;
   font-weight: 700;
-  font-size: 0.875rem;
-  letter-spacing: 0.015em;
+  font-size: 0.8125rem;
+  line-height: 1;
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.01em;
   color: #334155;
-  padding: 0.375rem 0.25rem;
-  transition: color 0.25s ease;
+  padding: 0.42rem 0.5rem;
+  border-radius: 9999px;
+  border: 1.5px solid transparent;
+  box-sizing: border-box;
+  transition: all 0.25s ease;
   text-decoration: none;
+}
+
+@media (min-width: 1280px) {
+  .nav-link {
+    font-size: 0.875rem;
+    padding: 0.48rem 0.75rem;
+  }
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -4px;
+  bottom: 2px;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
@@ -173,7 +181,7 @@ body {
 }
 
 .nav-link:hover::after {
-  width: 100%;
+  width: 60%;
 }
 
 /* Active Nav Link: Green Bubble with hover orange + animated underline */
@@ -181,18 +189,31 @@ body {
   position: relative;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.375rem;
   font-weight: 800;
-  font-size: 0.875rem;
-  letter-spacing: 0.015em;
-  color: #065F46; /* Emerald-800 */
+  font-size: 0.8125rem;
+  line-height: 1;
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.01em;
+  color: #065F46;
+  /* Emerald-800 */
   background: rgba(16, 185, 129, 0.12);
   border: 1.5px solid rgba(16, 185, 129, 0.35);
-  padding: 0.375rem 0.95rem;
+  padding: 0.42rem 0.7rem;
   border-radius: 9999px;
+  box-sizing: border-box;
   box-shadow: 0 2px 8px -2px rgba(16, 185, 129, 0.20);
   transition: all 0.25s ease;
   text-decoration: none;
+}
+
+@media (min-width: 1280px) {
+  .nav-link-active {
+    font-size: 0.875rem;
+    padding: 0.48rem 0.95rem;
+  }
 }
 
 .nav-link-active::after {
@@ -227,7 +248,7 @@ body {
   border-radius: 46px;
   background: #0b0f17;
   border: 6px solid #1e293b;
-  box-shadow: 
+  box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.15) inset,
     0 25px 60px -15px rgba(15, 23, 42, 0.35),
     0 12px 28px -8px rgba(234, 88, 12, 0.15);
@@ -236,9 +257,12 @@ body {
 }
 
 @keyframes phoneGentleFloat {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-8px);
   }
@@ -250,9 +274,12 @@ body {
 
 /* Floating animation for Owner Cutout */
 @keyframes floatOwner {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
+
   50% {
     transform: translateY(-12px) rotate(0.4deg);
   }
@@ -268,10 +295,12 @@ body {
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
     transform: translate(-50%, -50%) scale(1);
   }
+
   50% {
     box-shadow: 0 0 0 16px rgba(255, 255, 255, 0);
     transform: translate(-50%, -50%) scale(1.06);
   }
+
   100% {
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
     transform: translate(-50%, -50%) scale(1);
@@ -287,13 +316,14 @@ body {
   0% {
     background-position: -200% 0;
   }
+
   100% {
     background-position: 200% 0;
   }
 }
 
 .badge-shimmer {
-  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
   background-size: 200% 100%;
   animation: softShimmer 4s infinite;
 }
@@ -321,7 +351,7 @@ body {
   border-radius: 9999px;
 }
 
-.reels-scroll-container > * {
+.reels-scroll-container>* {
   scroll-snap-align: start;
 }
 
@@ -404,6 +434,7 @@ body {
   0% {
     transform: translate3d(0, 0, 0);
   }
+
   100% {
     transform: translate3d(-50%, 0, 0);
   }
@@ -462,4 +493,3 @@ body {
     animation-duration: 25s;
   }
 }
-
