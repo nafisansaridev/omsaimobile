@@ -1,80 +1,65 @@
 /**
  * OM SAI MOBILE - Reels Lightbox Video Player Modal
- * Provides vertical 9:16 interactive playback experience with sound toggle, progress animation, and WhatsApp action
+ * Real playable Instagram video player with seamless embed iframes, 
+ * instant thumbnail fallback, direct Instagram app links, and customized WhatsApp actions.
  */
 
 const reelData = {
   'reel-1': {
-    title: 'Amit unboxing iPhone 15 Pro',
-    customer: 'Amit Patel',
-    phone: 'Apple iPhone 15 Pro 256GB',
-    price: '₹1,34,999',
+    title: 'Amit unboxing VIVO V80',
+    customer: 'Amit',
+    phone: 'VIVO V80 5G Flagship',
+    price: '₹79,999',
     type: 'purchase',
-    date: '2 Days Ago',
+    date: 'Latest Delivery',
     image: 'assets/images/reel-thumb-1.jpg',
     category: 'unboxings',
-    desc: 'Amit came from Naroda specifically for our verified box-pack rate with official GST invoice. Spot data transfer done in 15 mins!'
+    instagramUrl: 'https://www.instagram.com/reel/DeCIartPwJY/',
+    embedUrl: 'https://www.instagram.com/reel/DeCIartPwJY/embed/',
+    desc: 'Amit unboxing the brand new VIVO V80 with authentic GST invoice, manufacturer warranty & complimentary premium setup at OM SAI MOBILE KALAMBOLI.'
   },
   'reel-2': {
-    title: 'Sneha unboxing OnePlus 12R',
-    customer: 'Sneha Shah',
-    phone: 'OnePlus 12R 5G 16GB RAM',
-    price: '₹39,999',
+    title: 'Ganesh unboxing iPhone 18 Pro',
+    customer: 'Ganesh',
+    phone: 'Apple iPhone 18 Pro',
+    price: '₹1,64,999',
     type: 'purchase',
-    date: '3 Days Ago',
+    date: 'Store Spotlight',
     image: 'assets/images/reel-thumb-2.jpg',
     category: 'unboxings',
-    desc: 'Festive offer unboxing with complimentary tempered glass and 100W SuperVOOC rapid setup. Congratulations Sneha!'
+    instagramUrl: 'https://www.instagram.com/reel/DeWqs7JPivr/',
+    embedUrl: 'https://www.instagram.com/reel/DeWqs7JPivr/embed/',
+    desc: 'Ganesh unboxing the ultra-flagship iPhone 18 Pro live in OM SAI MOBILE store with authentic seal verification, tempered glass application & festive gift pack.'
   },
   'reel-3': {
-    title: 'Same-Day Display Fix Demo',
-    customer: 'Live Service Bench',
-    phone: 'Samsung S22 Ultra AMOLED Replacement',
-    price: '₹6,499',
+    title: 'An Old Phone Shines Like New',
+    customer: 'OM SAI Repair Lab',
+    phone: 'Express Phone Restoration & Deep Polish',
+    price: '₹499 Onwards',
     type: 'repair',
-    date: 'Yesterday',
+    date: 'Service Bench',
     image: 'assets/images/reel-thumb-3.jpg',
     category: 'repairs',
-    desc: 'Cracked curved display repaired in 35 minutes live on our anti-static bench. 100% touch sensitivity & 90-day warranty passed.'
+    instagramUrl: 'https://www.instagram.com/reel/DfBgg9Gig0S/',
+    embedUrl: 'https://www.instagram.com/reel/DfBgg9Gig0S/embed/',
+    desc: 'Watch an old, worn phone get restored like brand new with expert deep cleaning, precision polish, and screen revival right here at Om Sai Mobile!'
   },
   'reel-4': {
-    title: 'Priya Handover with 1-Year Store Warranty',
-    customer: 'Priya Trivedi',
-    phone: 'Vivo V30 Pro ZEISS Edition',
-    price: '₹41,999',
+    title: 'Raju bhai unboxing Infinix Note 60 Pro',
+    customer: 'Raju Bhai',
+    phone: 'Infinix Note 60 Pro 5G',
+    price: '₹40,999',
     type: 'purchase',
-    date: '4 Days Ago',
+    date: 'In-Store Handover',
     image: 'assets/images/reel-thumb-4.jpg',
     category: 'happy-customers',
-    desc: 'Priya taking delivery with our OM SAI MOBILE stamped warranty card & branded gift bag. Genuine smartphones only!'
-  },
-  'reel-5': {
-    title: 'Rajesh unboxing Samsung S24 Ultra',
-    customer: 'Rajesh Verma',
-    phone: 'Samsung Galaxy S24 Ultra 256GB',
-    price: '₹1,19,999',
-    type: 'purchase',
-    date: '5 Days Ago',
-    image: 'assets/images/reel-thumb-5.jpg',
-    category: 'unboxings',
-    desc: 'Rajesh upgrading with instant old phone exchange spot credit of ₹18,500. Zero wait time, live activation.'
-  },
-  'reel-6': {
-    title: '20-Min Express Battery Swap',
-    customer: 'Live Service Bench',
-    phone: 'iPhone 13 OEM Battery Replacement',
-    price: '₹1,899',
-    type: 'repair',
-    date: '1 Week Ago',
-    image: 'assets/images/reel-thumb-6.jpg',
-    category: 'repairs',
-    desc: 'Swollen battery safely recycled and replaced with 100% health calibration and IP68 waterproof adhesive re-seal.'
+    instagramUrl: 'https://www.instagram.com/reel/De633blO15r/',
+    embedUrl: 'https://www.instagram.com/reel/De633blO15r/embed/',
+    desc: 'Raju bhai taking delivery of the Infinix Note 60 Pro 5G box pack with zero waiting time, official store warranty stamped, and complimentary accessories.'
   }
 };
 
 let activeReelInterval = null;
-let isAudioMuted = true;
-let isPlaying = true;
 let reelProgress = 0;
 
 function initReelsModal() {
@@ -91,62 +76,80 @@ function initReelsModal() {
   const modalDesc = document.getElementById('modalReelDesc');
   const modalPrice = document.getElementById('modalReelPrice');
   const modalActionBtn = document.getElementById('modalReelWhatsAppBtn');
-  const modalSoundBtn = document.getElementById('modalReelSoundToggle');
-  const soundIcon = document.getElementById('modalSoundIcon');
-  const soundText = document.getElementById('modalSoundText');
+  const modalInstagramBtn = document.getElementById('modalWatchOnInstagramBtn');
   const progressBar = document.getElementById('modalReelProgressBar');
-  const playPauseOverlay = document.getElementById('modalReelPlayPause');
-  const pauseCenterIndicator = document.getElementById('modalPauseCenterIndicator');
+  const iframeContainer = document.getElementById('modalReelIframeContainer');
 
   function openReel(reelId) {
     const data = reelData[reelId] || reelData['reel-1'];
 
-    modalImage.src = data.image;
-    modalCustomer.textContent = data.customer;
-    modalTitle.textContent = data.title;
-    modalDesc.textContent = data.desc;
-    modalPrice.textContent = data.price;
+    // Update text details
+    if (modalCustomer) modalCustomer.textContent = data.customer;
+    if (modalTitle) modalTitle.textContent = data.title;
+    if (modalDesc) modalDesc.textContent = data.desc;
+    if (modalPrice) modalPrice.textContent = data.price;
+    if (modalImage) modalImage.src = data.image;
 
+    // Direct Instagram link
+    if (modalInstagramBtn) {
+      modalInstagramBtn.href = data.instagramUrl;
+    }
+
+    // Configure WhatsApp inquiry CTA
     const storeNumber = "919821593333";
-    if (data.type === 'repair') {
-      const msg = `Hello OM SAI MOBILE SHOP KALAMBOLI! I watched your reel "${data.title}" and would like to inquire about express repair for ${data.phone}.`;
-      modalActionBtn.href = `https://wa.me/${storeNumber}?text=${encodeURIComponent(msg)}`;
-      modalActionBtn.innerHTML = `
-        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.966.565 3.805 1.554 5.371L2 22l4.757-1.527a9.98 9.98 0 005.274 1.488h.005c5.534 0 10.029-4.495 10.029-10.03 0-2.678-1.043-5.197-2.937-7.091A9.972 9.972 0 0012.031 2z"/></svg>
-        Book Express Repair on WhatsApp
-      `;
-    } else {
-      const msg = `Hello OM SAI MOBILE SHOP KALAMBOLI! I watched your store reel for ${data.customer} with ${data.phone} (${data.price}). I want to order/inquire about this model.`;
-      modalActionBtn.href = `https://wa.me/${storeNumber}?text=${encodeURIComponent(msg)}`;
-      modalActionBtn.innerHTML = `
-        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.966.565 3.805 1.554 5.371L2 22l4.757-1.527a9.98 9.98 0 005.274 1.488h.005c5.534 0 10.029-4.495 10.029-10.03 0-2.678-1.043-5.197-2.937-7.091A9.972 9.972 0 0012.031 2z"/></svg>
-        Order This Model on WhatsApp
+    if (modalActionBtn) {
+      if (data.type === 'repair') {
+        const msg = `Hello OM SAI MOBILE SHOP KALAMBOLI! I watched your reel "${data.title}" and would like to inquire about express repair / polish for ${data.phone}.`;
+        modalActionBtn.href = `https://wa.me/${storeNumber}?text=${encodeURIComponent(msg)}`;
+        modalActionBtn.innerHTML = `
+          <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.966.565 3.805 1.554 5.371L2 22l4.757-1.527a9.98 9.98 0 005.274 1.488h.005c5.534 0 10.029-4.495 10.029-10.03 0-2.678-1.043-5.197-2.937-7.091A9.972 9.972 0 0012.031 2z"/></svg>
+          <span>Book Repair & Polish on WhatsApp</span>
+        `;
+      } else {
+        const msg = `Hello OM SAI MOBILE SHOP KALAMBOLI! I watched your reel of ${data.customer} unboxing ${data.phone} (${data.price}). I want to order/inquire about this phone.`;
+        modalActionBtn.href = `https://wa.me/${storeNumber}?text=${encodeURIComponent(msg)}`;
+        modalActionBtn.innerHTML = `
+          <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.966.565 3.805 1.554 5.371L2 22l4.757-1.527a9.98 9.98 0 005.274 1.488h.005c5.534 0 10.029-4.495 10.029-10.03 0-2.678-1.043-5.197-2.937-7.091A9.972 9.972 0 0012.031 2z"/></svg>
+          <span>Order This Model on WhatsApp</span>
+        `;
+      }
+    }
+
+    // Mount playable Instagram embed iframe
+    if (iframeContainer) {
+      iframeContainer.innerHTML = `
+        <iframe 
+          id="activeReelIframe" 
+          src="${data.embedUrl}" 
+          class="w-full h-full border-0 rounded-2xl bg-black" 
+          frameborder="0" 
+          scrolling="no" 
+          allowtransparency="true" 
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
       `;
     }
 
-    // Reset player state
+    // Progress bar loop
     reelProgress = 0;
-    isPlaying = true;
-    if (pauseCenterIndicator) pauseCenterIndicator.classList.add('hidden');
-    startProgressLoop();
+    clearInterval(activeReelInterval);
+    activeReelInterval = setInterval(() => {
+      reelProgress += 0.8;
+      if (reelProgress > 100) reelProgress = 0;
+      if (progressBar) progressBar.style.width = `${reelProgress}%`;
+    }, 100);
 
     modal.classList.add('modal-active');
     document.body.style.overflow = 'hidden';
   }
 
-  function startProgressLoop() {
-    clearInterval(activeReelInterval);
-    activeReelInterval = setInterval(() => {
-      if (isPlaying) {
-        reelProgress += 1;
-        if (reelProgress > 100) reelProgress = 0;
-        if (progressBar) progressBar.style.width = `${reelProgress}%`;
-      }
-    }, 100);
-  }
-
   function closeReel() {
     clearInterval(activeReelInterval);
+    // Unmount iframe to immediately stop video & audio
+    if (iframeContainer) {
+      iframeContainer.innerHTML = '';
+    }
     modal.classList.remove('modal-active');
     document.body.style.overflow = '';
   }
@@ -154,7 +157,6 @@ function initReelsModal() {
   // Bind clicks to all reel cards
   reelCards.forEach(trigger => {
     trigger.addEventListener('click', (e) => {
-      // Don't trigger modal if user clicked the nested WhatsApp micro-action directly
       if (e.target.closest('.reel-direct-wa-btn')) return;
       const reelId = trigger.dataset.reelId;
       openReel(reelId);
@@ -170,37 +172,6 @@ function initReelsModal() {
       closeReel();
     }
   });
-
-  // Sound toggle
-  if (modalSoundBtn) {
-    modalSoundBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      isAudioMuted = !isAudioMuted;
-      if (isAudioMuted) {
-        soundText.textContent = 'Muted';
-        soundIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />`;
-        if (window.showToast) window.showToast('Audio muted');
-      } else {
-        soundText.textContent = 'Sound ON';
-        soundIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />`;
-        if (window.showToast) window.showToast('Audio simulated ON (ambient store sound)');
-      }
-    });
-  }
-
-  // Play/pause click on video container
-  if (playPauseOverlay) {
-    playPauseOverlay.addEventListener('click', () => {
-      isPlaying = !isPlaying;
-      if (pauseCenterIndicator) {
-        if (isPlaying) {
-          pauseCenterIndicator.classList.add('hidden');
-        } else {
-          pauseCenterIndicator.classList.remove('hidden');
-        }
-      }
-    });
-  }
 }
 
 // Category filter tabs on reels.html page
