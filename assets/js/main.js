@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLiveStoreStatus();
   initStickyHeader();
   initHeroPhoneMockup();
+  initGoogleReviews();
 });
 
 // Mobile Navigation Drawer
@@ -194,5 +195,83 @@ function generateWhatsAppOrderLink(productName, variant, price) {
   return `https://wa.me/${storePhoneNumber}?text=${encodeURIComponent(rawMessage)}`;
 }
 
+// Live Google Rating & Reviews Syncer
+function initGoogleReviews() {
+  const ratingTexts = document.querySelectorAll('.google-rating-text');
+  const ratingVals = document.querySelectorAll('.google-rating-val');
+  const reviewCounts = document.querySelectorAll('.google-reviews-count-text');
+  const reviewLinks = document.querySelectorAll('.google-review-live-link');
+  const reviewCtaTexts = document.querySelectorAll('.google-profile-review-cta');
+
+  // Baseline verified live data from OM SAI MOBILE Google Business Profile
+  const defaultData = {
+    rating: 4.7,
+    reviewCount: 38,
+    displayRating: "4.7★",
+    displayReviews: "38+ Reviews",
+    googleMapsUrl: "https://www.google.com/maps/place/OM+SAI+MOBILE+SHOP+KALAMBOLI/@19.0269307,73.1053602,17z/data=!4m6!3m5!1s0x3be7e9561ee39273:0x3d2129d5e57fab98!8m2!3d19.0269307!4d73.1053602!16s%2Fg%2F11n0jbxn1b"
+  };
+
+  const applyData = (data) => {
+    const rating = data.rating || defaultData.rating;
+    const count = data.reviewCount || defaultData.reviewCount;
+    const ratingFormatted = `${rating}★ Rated on Google (${count}+ Reviews)`;
+
+    ratingTexts.forEach(el => {
+      el.textContent = ratingFormatted;
+    });
+
+    ratingVals.forEach(el => {
+      el.textContent = rating.toString();
+    });
+
+    reviewCounts.forEach(el => {
+      el.textContent = `Based on ${count}+ Verified Google Reviews`;
+    });
+
+    reviewCtaTexts.forEach(el => {
+      el.textContent = `Or leave a review directly on our Google Business Profile (${rating}★)`;
+    });
+
+    reviewLinks.forEach(el => {
+      if (el.tagName === 'A' && (data.googleMapsUrl || defaultData.googleMapsUrl)) {
+        el.href = data.googleMapsUrl || defaultData.googleMapsUrl;
+      }
+    });
+  };
+
+  // Immediate synchronous render with live baseline
+  applyData(defaultData);
+
+  // Asynchronous live refresh from local data file or optional remote endpoint
+  const candidateEndpoints = [
+    'assets/data/google-reviews.json',
+    '../assets/data/google-reviews.json'
+  ];
+
+  if (window.GOOGLE_REVIEWS_API_ENDPOINT) {
+    candidateEndpoints.unshift(window.GOOGLE_REVIEWS_API_ENDPOINT);
+  }
+
+  (async function fetchLiveReviews() {
+    for (const url of candidateEndpoints) {
+      try {
+        const response = await fetch(url, { cache: 'no-cache' });
+        if (response.ok) {
+          const freshData = await response.json();
+          if (freshData && (freshData.rating || freshData.reviewCount)) {
+            applyData(freshData);
+            break;
+          }
+        }
+      } catch (e) {
+        // Continue silently to next fallback endpoint
+      }
+    }
+  })();
+}
+
 window.showToast = showToast;
 window.generateWhatsAppOrderLink = generateWhatsAppOrderLink;
+window.initGoogleReviews = initGoogleReviews;
+
